@@ -113,17 +113,22 @@
   }
 
   // real motion clip of the tool (assets/tool-loops/<CMD>.webm / .mp4) — shown only when the file exists, else the drawn animation stays
+  // real motion clip of the tool: tools listed in assets/tool-loops/manifest.json show the clip straight away (poster first,
+  // no flash of the drawing); every other tool keeps the drawn animation
+  var LOOPDIR = C.LOOPS || 'assets/tool-loops/', loopList = null;
+  try { fetch(LOOPDIR + 'manifest.json').then(function (r) { return r.ok ? r.json() : {}; }).then(function (j) { loopList = j || {}; }, function () { loopList = {}; }); } catch (e) { loopList = {}; }
   function loopVid(sh, cmd) {
     var svg = $('svg.anim', sh); if (!svg) return;
     var v = $('video.loopvid', sh);
-    if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
-    v.pause(); v.hidden = true; svg.style.display = ''; v.innerHTML = ''; v.removeAttribute('poster'); v.oncanplay = null;
-    if (!cmd) return;
-    var base = (C.LOOPS || 'assets/tool-loops/') + cmd;
-    v.poster = base + '.jpg';
+    if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
+    v.pause(); v.innerHTML = ''; v.removeAttribute('poster'); v.onerror = null;
+    var has = cmd && loopList && loopList[cmd];
+    if (!has) { v.hidden = true; svg.style.display = ''; return; }
+    var base = LOOPDIR + cmd;
+    svg.style.display = 'none'; v.hidden = false; v.poster = base + '.jpg';
     ['webm', 'mp4'].forEach(function (x) { var so = D.createElement('source'); so.src = base + '.' + x; so.type = 'video/' + x; v.appendChild(so); });
-    v.oncanplay = function () { v.oncanplay = null; svg.style.display = 'none'; v.hidden = false; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
-    v.load();
+    v.lastChild.onerror = function () { v.hidden = true; svg.style.display = ''; };   // clip missing → back to the drawing
+    v.load(); var p = v.play(); if (p && p.catch) p.catch(function () {});
   }
   // tools / app tools
   var tsh = $('#toolSheet');
