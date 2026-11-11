@@ -402,3 +402,33 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 .news-tx{white-space:normal;line-height:1.35}
 @media print{.js-rv .rv{opacity:1!important;transform:none!important}}
 .avatar{position:relative;z-index:2}
+/* 11-11 drawer icons */
+.drawer nav a,.drawer .theme-row{gap:14px;justify-content:flex-start}
+.drawer .di{flex:none;width:38px;height:38px;border-radius:12px;background:var(--panel2);color:var(--goldText);display:flex;align-items:center;justify-content:center}
+.drawer .di svg{width:24px;height:24px}
+.drawer nav a[aria-current="page"] .di{background:var(--gold);color:var(--onGold)}
+.drawer .dt{flex:1;text-align:start}
+.drawer .dc{flex:none;color:var(--muted);font-size:22px;line-height:1}
+.drawer .dc{transform:scaleX(-1)}
+.drawer .dmoon{display:none}[data-theme="light"] .drawer .dsun{display:none}[data-theme="light"] .drawer .dmoon{display:block}
+/* 11-11 Sitey: why strip · roles · privacy */
+.whybar{display:flex;flex-direction:column;gap:12px}
+.whybar>b{font-family:'Readex Pro','IBM Plex Sans Arabic',sans-serif;font-size:19px}
+.whyl{display:grid;gap:10px}
+@media(min-width:900px){.whyl{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.whyi{display:flex;gap:10px;align-items:flex-start;color:var(--text2);font-size:15px}
+.whyi i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--live);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.g-roles{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){.g-roles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.g-roles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.role{display:flex;gap:14px;align-items:flex-start}
+.role .tile{flex:none;width:52px;height:52px;border-radius:16px;background:var(--tileBg,var(--panel2));display:flex;align-items:center;justify-content:center}
+.role .tile svg{width:34px;height:34px}
+.role b{font-family:'Readex Pro','IBM Plex Sans Arabic',sans-serif;font-size:17px}
+.role .ds{color:var(--text2);font-size:14px}
+.privacy{display:flex;flex-direction:column;gap:18px}
+.pv h2{font-size:19px;margin:18px 0 6px}
+.pv p,.pv li{color:var(--text2);font-size:15.5px;line-height:1.75}
+.pv ul{margin:0;padding-inline-start:20px}
+.pv .lead{background:var(--liveBg);border-radius:14px;padding:12px 14px;color:var(--text);margin-top:10px}
+html[dir="ltr"] .pv[data-pv="ar"],html[dir="rtl"] .pv[data-pv="en"]{display:none}
