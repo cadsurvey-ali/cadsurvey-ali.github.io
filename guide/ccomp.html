@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ar" data-l="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DWG Compare (CCOMP) | CAD &amp; SURVEY Tools</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/help.css">
+<script src="assets/videos.js"></script>
+<script src="assets/help.js"></script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><img src="assets/logo.png" alt="CAD &amp; SURVEY"><div><b>CAD <span>&amp;</span> SURVEY Tools</b><small><span class="ar">دليل الأدوات</span><span class="msa">دليل الأدوات</span><span class="en">Tools guide</span></small></div></a>
+  <div class="tools-r">
+    <a class="pdfb ar" href="CAD_SURVEY_Guide_IQ.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none"><path d="M3 1.5h6.5L13 5v9.5H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9.5h5M5.5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>دليل PDF</a><a class="pdfb msa" href="CAD_SURVEY_Guide_MSA.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none"><path d="M3 1.5h6.5L13 5v9.5H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9.5h5M5.5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>دليل PDF</a><a class="pdfb en" href="CAD_SURVEY_Guide_EN.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none"><path d="M3 1.5h6.5L13 5v9.5H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9.5h5M5.5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>PDF guide</a>
+    <a class="vid" data-video="CCOMP" href="#"><svg viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M6.5 5.5 11 8l-4.5 2.5z" fill="#3a1d1d"/></svg><span class="ar">فيديو الأداة</span><span class="msa">فيديو الأداة</span><span class="en">Video</span></a>
+    <div class="lang"><span data-v="ar" class="on">عراقي</span><span data-v="msa">فصحى</span><span data-v="en">EN</span></div>
+  </div>
+</div></header>
+
+<main><div class="page">
+<div class="crumb"><a href="index.html"><span class="ar">الدليل</span><span class="msa">الدليل</span><span class="en">Guide</span></a> › SURVEY QC</div>
+<h1><span class="tn">DWG Compare</span><span class="cmd">CCOMP</span><span class="ar">مقارنة الرسومات</span><span class="msa">مقارنة الرسومات</span><span class="en">Drawing compare</span></h1>
+<p class="lead ar">يقارن رسمين (أو مجموعتين بنفس الرسم) ويلگه شنو <b>تحرك</b> وشنو <b>انضاف</b> وشنو <b>انحذف</b>، ويا إزاحة كل عنصر. التغييرات تتلوّن بالرسم، وتطلع بقائمة وجدول وتقرير.</p><p class="lead msa">يقارن بين رسمين (أو مجموعتين في الرسم نفسه) ويحدد ما <b>تحرّك</b> وما <b>أُضيف</b> وما <b>حُذف</b>، مع إزاحة كل عنصر. تُلوَّن التغييرات في الرسم، وتُعرض في قائمة وجدول وتقرير.</p>
+<p class="lead en">Compares two drawings (or two sets in one drawing) and finds what <b>moved</b>, what was <b>added</b> and what was <b>deleted</b>, with the shift of each object. The changes are coloured in the drawing and listed in a table and a report.</p>
+
+<div class="note"><span class="ar"><b>تمرين 06:</b> تقارن 12 مركز أساس بالتصميم ويا الرفع المنفّذ بنفس الرسم، وتلگه شنو تحرك وشنو ناقص وشنو جديد. الملفات بالفولدر <code>Training\06_CCOMP\</code>. <a href="../Training/guide/iq/06_ccomp.html" target="_blank">افتح التمرين ›</a></span><span class="msa"><b>التمرين 06:</b> قارن 12 مركز أساس في التصميم مع الرفع المنفّذ في الرسم نفسه، وحدّد ما تحرّك وما هو ناقص وما هو جديد. الملفات في المجلد <code>Training\06_CCOMP\</code>. <a href="../Training/guide/msa/06_ccomp.html" target="_blank">افتح التمرين ›</a></span><span class="en"><b>Exercise 06:</b> compare 12 design foundation centres with the as-built survey in the same drawing, and find what moved, what is missing and what is new. Files in <code>Training\06_CCOMP\</code>. <a href="../Training/guide/en/06_ccomp.html" target="_blank">Open the exercise ›</a></span></div>
+<div class="note"><span class="ar"><b>أداة مجانية.</b> <b>وين ألگاها؟</b> شريط CAD &amp; SURVEY › لوحة Survey QC › <b>DWG Compare</b> (زر صغير)، أو اكتب <code>CCOMP</code>.</span><span class="msa"><b>أداة مجانية.</b> <b>أين أجدها؟</b> شريط CAD &amp; SURVEY › لوحة Survey QC › <b>DWG Compare</b> (زر صغير)، أو اكتب الأمر <code>CCOMP</code>.</span><span class="en"><b>A free tool.</b> <b>Where is it?</b> Ribbon CAD &amp; SURVEY › Survey QC panel › <b>DWG Compare</b> (small button), or type <code>CCOMP</code>.</span></div>
+<div class="toc">
+  <a href="#src"><span class="ar">مصدر المقارنة</span><span class="msa">مصدر المقارنة</span><span class="en">Source</span></a>
+  <a href="#ex1"><span class="ar">مثال: إزاحة الأسس</span><span class="msa">مثال: إزاحة الأسس</span><span class="en">Example: foundation shifts</span></a>
+  <a href="#steps"><span class="ar">الخطوات</span><span class="msa">الخطوات</span><span class="en">Steps</span></a>
+  <a href="#match"><span class="ar">شلون يطابق</span><span class="msa">طريقة المطابقة</span><span class="en">How it matches</span></a>
+  <a href="#calc"><span class="ar">الحساب</span><span class="msa">الحساب</span><span class="en">Calculation</span></a>
+  <a href="#opts"><span class="ar">الخيارات</span><span class="msa">الخيارات</span><span class="en">Options</span></a>
+  <a href="#faq"><span class="ar">أسئلة</span><span class="msa">أسئلة</span><span class="en">Questions</span></a>
+</div>
+
+<!-- ============================================================ source -->
+<div class="note"><span class="ar"><b>− / +</b> جنب خانات الأرقام تغيّر القيمة خطوة خطوة (وأسهم ↑ / ↓ بالكيبورد هم نفس الشي).</span><span class="msa"><b>− / +</b> بجانب خانات الأرقام تغيّر القيمة خطوةً خطوة (ومفتاحا ↑ / ↓ كذلك).</span><span class="en"><b>− / +</b> next to number boxes step the value (↑/↓ keys too).</span></div>
+<h2 id="src"><span class="n">1</span><span class="ar">مصدر المقارنة</span><span class="msa">مصدر المقارنة</span><span class="en">Source</span></h2>
+<div class="grid2">
+  <div class="card">
+    <figure><svg viewBox="0 0 240 90" role="img" aria-label="Two files"><rect x="14" y="14" width="80" height="62" rx="5" fill="#F6F8FA" stroke="#6E8094" stroke-width="1.5"/><text x="54" y="42" text-anchor="middle" font-size="11" fill="#5A6472">Rev 1</text><text x="54" y="58" text-anchor="middle" font-size="9" fill="#8a96a3">old · read only</text>
+    <path d="M102 45h34m-8-7 8 7-8 7" stroke="#E0A800" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="146" y="14" width="80" height="62" rx="5" fill="#FFF8DC" stroke="#E0A800" stroke-width="1.8"/><text x="186" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#1C2430">Rev 2</text><text x="186" y="58" text-anchor="middle" font-size="9" fill="#7A5306">open drawing</text></svg></figure>
+    <b class="t">Two files</b>
+    <p class="ar">الرسم المفتوح = الجديد. القديم تختاره بـ <code>File…</code>، وينقرا بالخلفية بدون ما ينفتح أو يتغير. لمقارنة نسختين من مخطط، أو ملف المقاول ويا ملفك.</p><p class="msa">الرسم المفتوح = الجديد. اختر القديم بـ <code>File…</code>، فيُقرأ في الخلفية دون أن يُفتح أو يتغير. يصلح لمقارنة نسختين من مخطط، أو ملف المقاول مع ملفك.</p>
+    <p class="en">The open drawing = new. Choose the old one with <code>File…</code>; it is read in the background, never opened or changed. For two revisions, or the contractor's file against yours.</p>
+  </div>
+  <div class="card">
+    <figure><svg viewBox="0 0 240 90" role="img" aria-label="Same drawing, set A and set B"><rect x="14" y="10" width="212" height="70" rx="5" fill="#F6F8FA" stroke="#6E8094" stroke-width="1.5"/>
+    <g fill="none" stroke="#3a4a5c" stroke-width="1.5"><rect x="40" y="28" width="26" height="26"/><rect x="104" y="28" width="26" height="26"/><rect x="168" y="28" width="26" height="26"/></g>
+    <g fill="#E0A800"><circle cx="54" cy="41" r="3.5"/><circle cx="121" cy="38" r="3.5"/><circle cx="181" cy="43" r="3.5"/></g>
+    <text x="30" y="72" font-size="9" fill="#3a4a5c">A = DESIGN layer</text><text x="132" y="72" font-size="9" fill="#7A5306">B = ASBUILT layer</text></svg></figure>
+    <b class="t">Same drawing</b>
+    <p class="ar">مجموعتين بنفس الرسم: A = التصميم و B = المنفّذ، حسب اللير أو بالتحديد. هذا الأنسب للإزاحة: نقاط الرفع منزّلة على رسم التصميم.</p><p class="msa">مجموعتان في الرسم نفسه: A = التصميم و B = المنفّذ، بحسب الطبقة أو بالتحديد. وهذا الأنسب لقياس الإزاحة: نقاط الرفع منزّلة على رسم التصميم.</p>
+    <p class="en">Two sets in one drawing: A = design, B = as-built, by layer or by selection. Best for shifting: survey points brought onto the design drawing.</p>
+  </div>
+</div>
+
+<!-- ============================================================ example -->
+<h2 id="ex1"><span class="n">2</span><span class="ar">مثال: إزاحة نقاط الأسس</span><span class="msa">مثال: إزاحة نقاط الأسس</span><span class="en">Example: foundation point shifts</span></h2>
+<p class="ar">نقاط التصميم على لير <code>DESIGN</code> ونقاط الرفع على لير <code>ASBUILT</code>، المسافة بين النقاط 5 م، والسماحية <code>0.010</code> م:</p><p class="msa">نقاط التصميم على الطبقة <code>DESIGN</code> ونقاط الرفع على الطبقة <code>ASBUILT</code>، والمسافة بين النقاط 5 م، والسماحية <code>0.010</code> م:</p>
+<p class="en">Design points on layer <code>DESIGN</code>, survey points on <code>ASBUILT</code>, 5 m apart, tolerance <code>0.010</code> m:</p>
+<div class="grid2">
+  <table class="d">
+    <tr><th>Point</th><th>ΔE</th><th>ΔN</th><th>Shift</th><th><span class="ar">النتيجة</span><span class="msa">النتيجة</span><span class="en">Result</span></th></tr>
+    <tr><td>P1</td><td>+0.004</td><td>−0.003</td><td>0.005</td><td style="background:#EEF1F4">Same</td></tr>
+    <tr><td>P2</td><td>+0.250</td><td>−0.130</td><td><b>0.282</b></td><td style="background:#FFF4C2;color:#7A5306;font-weight:600">Moved</td></tr>
+    <tr><td>P3</td><td>+0.150</td><td>+0.150</td><td><b>0.212</b></td><td style="background:#FFF4C2;color:#7A5306;font-weight:600">Moved</td></tr>
+    <tr><td>P4</td><td colspan="3"><span class="ar">ما مرفوعة</span><span class="msa">غير مرفوعة</span><span class="en">not surveyed</span></td><td style="background:#FBE1E1;color:#9A1F1F;font-weight:600">Deleted</td></tr>
+    <tr><td>P5</td><td colspan="3"><span class="ar">نقطة جديدة بالرفع</span><span class="msa">نقطة جديدة في الرفع</span><span class="en">new point in the survey</span></td><td style="background:#E3F4E6;color:#1D6B33;font-weight:600">Added</td></tr>
+  </table>
+  <figure><svg viewBox="0 0 300 130" role="img" aria-label="Highlight in the drawing: moved points in gold with the old place grey, deleted red with a cross, added green">
+    <rect x="0" y="0" width="300" height="130" rx="8" fill="#212830"/>
+    <circle cx="40" cy="65" r="5" fill="none" stroke="#8a8a8a"/><circle cx="40" cy="65" r="2.5" fill="#cfd6de"/><text x="40" y="92" text-anchor="middle" font-size="9" fill="#9aa6b3">P1 same</text>
+    <circle cx="95" cy="65" r="4" fill="none" stroke="#8a8a8a" stroke-dasharray="2 2"/><line x1="95" y1="65" x2="114" y2="75" stroke="#F5C518" stroke-width="1.5"/><circle cx="114" cy="75" r="9" fill="none" stroke="#F5C518" stroke-width="1.6"/><circle cx="114" cy="75" r="2.5" fill="#F5C518"/><text x="105" y="40" font-size="9" fill="#F5C518">P2 · 0.282</text>
+    <circle cx="160" cy="65" r="4" fill="none" stroke="#8a8a8a" stroke-dasharray="2 2"/><line x1="160" y1="65" x2="172" y2="53" stroke="#F5C518" stroke-width="1.5"/><circle cx="172" cy="53" r="9" fill="none" stroke="#F5C518" stroke-width="1.6"/><circle cx="172" cy="53" r="2.5" fill="#F5C518"/><text x="172" y="108" text-anchor="middle" font-size="9" fill="#F5C518">P3 · 0.212</text>
+    <circle cx="215" cy="65" r="9" fill="none" stroke="#ff6b6b" stroke-width="1.6"/><path d="m209 59 12 12m0-12-12 12" stroke="#ff6b6b" stroke-width="1.6"/><text x="215" y="92" text-anchor="middle" font-size="9" fill="#ff8a80">P4 deleted</text>
+    <circle cx="265" cy="65" r="9" fill="none" stroke="#7fd39a" stroke-width="1.6"/><circle cx="265" cy="65" r="2.5" fill="#7fd39a"/><text x="265" y="92" text-anchor="middle" font-size="9" fill="#7fd39a">P5 added</text>
+    <text x="150" y="124" text-anchor="middle" font-size="8.5" fill="#8FA0B3">shifts drawn larger to be seen</text>
+  </svg><figcaption class="ar">الألوان مؤقتة: ما ينضاف شي للرسم. <code>Clear</code> يشيلها.</figcaption><figcaption class="msa">الألوان مؤقتة: لا يُضاف أي شيء إلى الرسم. ويزيلها <code>Clear</code>.</figcaption><figcaption class="en">The colours are temporary: nothing is added. <code>Clear</code> removes them.</figcaption></figure>
+</div>
+<div class="note"><span class="ar">P5 بعيدة 5 م عن P4، أكثر من مسافة البحث التلقائية (2.5 م = نص المسافة بين النقاط)، فما تنحسب نفس النقطة: وحدة محذوفة ووحدة مضافة.</span><span class="msa">تبعد P5 مسافة 5 م عن P4، وهي أكبر من مسافة البحث التلقائية (2.5 م = نصف المسافة بين النقاط)، لذا لا تُعدّان النقطة نفسها: واحدة محذوفة وأخرى مضافة.</span><span class="en">P5 is 5 m from P4, more than the automatic search (2.5 m = half the point spacing), so they are not the same point: one deleted and one added.</span></div>
+
+<!-- ============================================================ steps -->
+<h2 id="steps"><span class="n">3</span><span class="ar">الخطوات</span><span class="msa">الخطوات</span><span class="en">Steps</span></h2>
+<div class="grid2">
+  <ol class="steps">
+    <li><span class="ar">اختار <code>Same drawing</code> ← <code>By layer</code>، واكتب لير A ولير B (أو زر ▾، أو زر المؤشر وأشّر على عنصر).</span><span class="msa">اختر <code>Same drawing</code> ← <code>By layer</code>، واكتب طبقة A وطبقة B (أو استخدم الزر ▾، أو زر المؤشر ثم انقر عنصرًا).</span><span class="en">Choose <code>Same drawing</code> → <code>By layer</code> and set the A and B layers (type, ▾, or the pointer button and click an object).</span></li>
+    <li><span class="ar">اكتب السماحية <code>Tolerance</code>، وخلي <code>Search</code> على auto.</span><span class="msa">اكتب السماحية <code>Tolerance</code>، واترك <code>Search</code> على auto.</span><span class="en">Type the <code>Tolerance</code>; keep <code>Search</code> on auto.</span></li>
+    <li><span class="ar">اختار أنواع العناصر (Points مثلاً) واضغط <code>Compare</code>.</span><span class="msa">اختر أنواع العناصر (Points مثلًا) واضغط <code>Compare</code>.</span><span class="en">Choose the kinds of objects (e.g. Points) and press <code>Compare</code>.</span></li>
+    <li><span class="ar">اضغط على أي عدد (Moved, Added...) حتى تطلع عناصره بالقائمة، وأي سطر يقرّب عليه بالرسم.</span><span class="msa">انقر أي عدد (Moved، Added...) لتظهر عناصره في القائمة، وانقر أي سطر للتكبير إليه في الرسم.</span><span class="en">Click a count (Moved, Added ...) to list those objects; click a row to zoom to it.</span></li>
+    <li><span class="ar"><code>Table</code> أو <code>Excel</code> أو <code>PDF</code> للتقرير.</span><span class="msa"><code>Table</code> أو <code>Excel</code> أو <code>PDF</code> للتقرير.</span><span class="en"><code>Table</code>, <code>Excel</code> or <code>PDF</code> for the report.</span></li>
+  </ol>
+  <div class="pal">
+    <div class="h">SOURCE</div><span class="c">Two files</span><span class="c o">Same drawing</span>
+    <div class="h">SETS</div><span class="c o">By layer</span><span class="c">By selection</span><br><span style="color:#cfe0f2">A</span> Design <span class="bx">DESIGN</span> ▾<br><span style="color:#F5C518">B</span> As-built <span class="bx">ASBUILT</span> ▾<em style="top:34px">1</em>
+    <div class="h">Area &amp; tolerance</div><span class="c o">Whole</span><span class="c">Window</span> Tol <span class="bx">0.010</span> Search <span class="bx">auto</span><em style="top:118px">2</em>
+    <div class="h">Objects</div><span class="c o">Points</span><span class="c">Blocks</span><span class="c">Lines</span><em style="top:160px">3</em>
+    <div class="h">RESULT</div><span class="c o" style="color:#F5C518">2 Moved</span><span class="c" style="color:#7fd39a">1 Added</span><span class="c" style="color:#ff8a80">1 Deleted</span><span class="c">1 Same</span><em style="top:200px">4</em>
+    <div style="font-family:Consolas,monospace;font-size:11.5px;color:#cfd6de;margin-top:4px">↔ P2 &nbsp;&nbsp;0.282 &nbsp;ASBUILT<br>↔ P3 &nbsp;&nbsp;0.212 &nbsp;ASBUILT</div>
+    <div class="bar"><span class="c o">Compare</span><span class="c">Zoom all</span><span class="c">Clear</span><br><span class="c">Table</span><span class="c">Excel</span><span class="c">PDF</span></div><em style="bottom:28px">5</em>
+  </div>
+</div>
+
+<!-- ============================================================ matching -->
+<h2 id="match"><span class="n">4</span><span class="ar">شلون يعرف إنه نفس العنصر؟</span><span class="msa">كيف تعرف الأداة أنه العنصر نفسه؟</span><span class="en">How does it know it is the same object?</span></h2>
+<ol class="steps">
+  <li><span class="ar"><b>بالرقم أو الاسم:</b> رقم نقطة COGO، أو اسم البلوك ويا أول Attribute، أو نفس النص (إذا ما متكرر).</span><span class="msa"><b>بالرقم أو الاسم:</b> رقم نقطة COGO، أو اسم الكتلة مع أول Attribute، أو النص نفسه (إذا لم يكن مكررًا).</span><span class="en"><b>By number or name:</b> the COGO point number, the block name with its first attribute, or the same text (when not repeated).</span></li>
+  <li><span class="ar"><b>بالـ handle:</b> بين ملفين نسخ من نفس الرسم (Save As)، كل عنصر يحتفظ بنفس الهوية. الأداة تتأكد أول إن الملفين فعلاً من نفس الأصل.</span><span class="msa"><b>بالـ handle:</b> بين ملفين هما نسختان من الرسم نفسه (Save As)، يحتفظ كل عنصر بهويته. وتتحقق الأداة أولًا من أن الملفين من الأصل نفسه فعلًا.</span><span class="en"><b>By handle:</b> between two revisions of one drawing (Save As) every object keeps its identity. The tool first checks the files really belong together.</span></li>
+  <li><span class="ar"><b>بالأقرب:</b> الباقي يتطابق بأقرب عنصر من نفس النوع ضمن مسافة البحث، الأقرب أولاً.</span><span class="msa"><b>بالأقرب:</b> يُطابَق الباقي مع أقرب عنصر من النوع نفسه ضمن مسافة البحث، الأقرب فالأقرب.</span><span class="en"><b>By nearest:</b> the rest pairs with the nearest object of the same kind inside the search distance, closest first.</span></li>
+</ol>
+<dl class="opt">
+  <dt>Points</dt><dd><span class="ar">الإزاحة بين النقطتين، وفرق المنسوب (dZ) بالملاحظة إذا أكبر من السماحية.</span><span class="msa">الإزاحة بين النقطتين، وفرق المنسوب (dZ) في الملاحظة إذا تجاوز السماحية.</span><span class="en">The shift between the points; the level difference (dZ) in the note when above the tolerance.</span></dd>
+  <dt>Blocks</dt><dd><span class="ar">نقطة الإدراج، والدوران بالملاحظة.</span><span class="msa">نقطة الإدراج، والدوران في الملاحظة.</span><span class="en">The insertion point; rotation in the note.</span></dd>
+  <dt>Lines</dt><dd><span class="ar">أكبر إزاحة بين الطرفين.</span><span class="msa">الإزاحة الأكبر بين الطرفين.</span><span class="en">The bigger shift of the two ends.</span></dd>
+  <dt>Polylines</dt><dd><span class="ar">أكبر إزاحة بين الرؤوس، وتغيّر عدد الرؤوس بالملاحظة.</span><span class="msa">أكبر إزاحة بين الرؤوس، وتغيّر عدد الرؤوس في الملاحظة.</span><span class="en">The biggest vertex shift; a change in vertex count in the note.</span></dd>
+  <dt>Circles</dt><dd><span class="ar">المركز ونصف القطر (والأقواس أطرافها).</span><span class="msa">المركز ونصف القطر (وللأقواس أطرافها أيضًا).</span><span class="en">The centre and the radius (arcs also their ends).</span></dd>
+  <dt>Texts</dt><dd><span class="ar">مكان النص، وتغيّر الكتابة بالملاحظة.</span><span class="msa">موضع النص، وتغيّر الكتابة في الملاحظة.</span><span class="en">The text position; a changed text in the note.</span></dd>
+</dl>
+
+<!-- ============================================================ calculation -->
+<h2 id="calc"><span class="n">5</span><span class="ar">الحساب بالأرقام</span><span class="msa">الحساب بالأرقام</span><span class="en">The calculation with numbers</span></h2>
+<p class="ar">أربع نقاط تصميم (A) على صف، المسافة بيناتهن 6 م، وأربع نقاط رفع (B). Tolerance = <code>0.010</code> م و Search = auto. كلها نقاط عادية (POINT) فما إلها رقم أو اسم.</p><p class="msa">أربع نقاط تصميم (A) على صف واحد، المسافة بينها 6 م، وأربع نقاط رفع (B). Tolerance = <code>0.010</code> م و Search = auto. جميعها نقاط عادية (POINT) فلا رقم لها ولا اسم.</p>
+<p class="en">Four design points (A) in a row, 6 m apart, and four survey points (B). Tolerance = <code>0.010</code> m, Search = auto. All plain points (POINT), so they have no number or name.</p>
+<div class="grid2">
+  <table class="d">
+    <tr><th>Pt</th><th>E</th><th>N</th></tr>
+    <tr><td>A1</td><td>722640.000</td><td>3375410.000</td></tr>
+    <tr><td>A2</td><td>722646.000</td><td>3375410.000</td></tr>
+    <tr><td>A3</td><td>722652.000</td><td>3375410.000</td></tr>
+    <tr><td>A4</td><td>722658.000</td><td>3375410.000</td></tr>
+    <tr><td>B1</td><td>722640.004</td><td>3375409.994</td></tr>
+    <tr><td>B2</td><td>722646.180</td><td>3375410.095</td></tr>
+    <tr><td>B4</td><td>722657.988</td><td>3375410.009</td></tr>
+    <tr><td>B5</td><td>722652.000</td><td>3375413.600</td></tr>
+  </table>
+  <figure><svg viewBox="0 0 300 170" role="img" aria-label="Design points A1 to A4 with a 3 m search circle each; B1, B2 and B4 fall inside their circles, B5 is outside the circle of A3">
+    <rect x="0.5" y="0.5" width="299" height="169" rx="8" fill="#F6F8FA" stroke="#D9DEE4"/>
+    <g fill="none" stroke="#6E8094" stroke-width="1" stroke-dasharray="3 3"><circle cx="60" cy="105" r="30"/><circle cx="120" cy="105" r="30"/><circle cx="180" cy="105" r="30"/><circle cx="240" cy="105" r="30"/></g>
+    <g fill="#1C2430"><circle cx="60" cy="105" r="3"/><circle cx="120" cy="105" r="3"/><circle cx="180" cy="105" r="3"/><circle cx="240" cy="105" r="3"/></g>
+    <g font-size="9" fill="#1C2430" text-anchor="middle"><text x="60" y="148">A1</text><text x="120" y="148">A2</text><text x="180" y="148">A3</text><text x="240" y="148">A4</text></g>
+    <circle cx="62" cy="108" r="3" fill="#6E8094"/><text x="60" y="161" text-anchor="middle" font-size="9" fill="#6E8094">B1 · 0.007</text>
+    <line x1="120" y1="105" x2="133" y2="98" stroke="#E0A800" stroke-width="1.5"/><circle cx="133" cy="98" r="3" fill="#E0A800"/><text x="120" y="161" text-anchor="middle" font-size="9" fill="#7A5306" font-weight="700">B2 · 0.204</text>
+    <line x1="240" y1="105" x2="232" y2="99" stroke="#E0A800" stroke-width="1.5"/><circle cx="232" cy="99" r="3" fill="#E0A800"/><text x="240" y="161" text-anchor="middle" font-size="9" fill="#7A5306" font-weight="700">B4 · 0.015</text>
+    <path d="m175 100 10 10m0-10-10 10" stroke="#C0392B" stroke-width="1.6"/><text x="180" y="161" text-anchor="middle" font-size="9" fill="#C0392B">A3 Deleted</text>
+    <circle cx="180" cy="69" r="3.5" fill="#2E7D46"/><line x1="180" y1="72" x2="180" y2="102" stroke="#2E7D46" stroke-width="1" stroke-dasharray="2 2"/><text x="174" y="58" text-anchor="end" font-size="9" fill="#2E7D46">B5 Added · 3.600 m &gt; 3.000</text>
+    <text x="14" y="20" font-size="9" fill="#6E8094">search r = 3.000 m</text>
+  </svg><figcaption><span class="ar">الإزاحات مكبّرة حتى تبين. الدائرة المتقطعة = مسافة البحث.</span><span class="msa">الإزاحات مكبّرة لتظهر. الدائرة المتقطعة = مسافة البحث.</span><span class="en">Shifts drawn larger to be seen. Dashed circle = the search distance.</span></figcaption></figure>
+</div>
+<div class="calc"><h4><span class="ar">من المطابقة إلى النتيجة</span><span class="msa">من المطابقة إلى النتيجة</span><span class="en">From matching to the result</span></h4>
+ <div class="st"><b>1</b><span class="f">nearest spacing of A = 6.000 m (all four)
+r = 6.000 / 2</span><span class="r">Search (auto) = 3.000 m</span><span class="ar">auto = نص المسافة الصغيرة بين العناصر (أصغر 10% من مسافات أقرب جار)، مو أقل من 3 × Tolerance (ولا من 2 سم) ولا أكثر من 25 م.</span><span class="msa">auto = نصف المسافة الصغيرة بين العناصر (أصغر 10% من مسافات أقرب جار)، على ألا تقل عن 3 × Tolerance (ولا عن 2 سم) ولا تزيد على 25 م.</span><span class="en">auto = half the small spacing (the lowest 10 % of the nearest-neighbour distances), not under 3 × tolerance (nor 2 cm) and not over 25 m.</span></div>
+ <div class="st"><b>2</b><span class="f">1) same number / name   2) same handle   3) nearest ≤ 3.000 m</span><span class="r">B1→A1 · B4→A4 · B2→A2</span><span class="ar">النقاط العادية ما إلها رقم، و handle بس بين ملفين (Two files)، فهنا تتطابق بالأقرب: الأزواج تترتب من الأقرب للأبعد.</span><span class="msa">النقاط العادية لا رقم لها، والـ handle لا يُستخدم إلا بين ملفين (Two files)، لذا تُطابَق هنا بالأقرب: تُرتَّب الأزواج من الأقرب إلى الأبعد.</span><span class="en">Plain points have no number, and handles are only for Two files, so here they pair by nearest: closest pairs first.</span></div>
+ <div class="st"><b>3</b><span class="f">10 pairs by handle, 8 within 4 × 3.000 = 12.000 m
+8 ≥ 0.6 × 10 = 6</span><span class="r">handles used</span><span class="ar">(بس لـ Two files، ما ينطبق على هذا المثال.) بالملفين: الـ handle ينقبل بس إذا 60% من أزواجه (أو أكثر) قريبة، يعني الملفين فعلاً نسخ من نفس الرسم. وإلا ينترك ويطابق بالأقرب.</span><span class="msa">(لـ Two files فقط، ولا يُطبَّق في هذا المثال.) مع ملفين: لا يُعتمد الـ handle إلا إذا كانت 60% من أزواجه (أو أكثر) متقاربة، أي أن الملفين نسختان من الرسم نفسه فعلًا. وإلا يُترك وتُستخدم المطابقة بالأقرب.</span><span class="en">(Only for Two files, not used in this example.) With two files: handles are used only when 60 % of their pairs (or more) are near, so the files really are revisions of one drawing. Else they are left and nearest is used.</span></div>
+ <div class="st"><b>4</b><span class="f">B1: Shift = √(dE² + dN²) = √(0.004² + (−0.006)²) = √(0.000016 + 0.000036)</span><span class="r">0.007 ≤ 0.010 → Same</span><span class="ar">dE و dN = الجديد ناقص القديم.</span><span class="msa">dE و dN = الجديد مطروحًا منه القديم.</span><span class="en">dE and dN = new minus old.</span></div>
+ <div class="st"><b>5</b><span class="f">B2: √(0.180² + 0.095²) = √(0.032400 + 0.009025)</span><span class="r">0.204 &gt; 0.010 → Moved (ΔE +0.180, ΔN +0.095)</span><span class="ar">أكبر من السماحية = تحرك.</span><span class="msa">أكبر من السماحية = تحرّك.</span><span class="en">Above the tolerance = moved.</span></div>
+ <div class="st"><b>6</b><span class="f">B4: √((−0.012)² + 0.009²) = √(0.000144 + 0.000081)</span><span class="r">0.015 &gt; 0.010 → Moved (ΔE −0.012, ΔN +0.009)</span><span class="ar">حتى 5 ملم زيادة تكفي. الإزاحة اللي تساوي السماحية بالضبط = Same.</span><span class="msa">حتى زيادة 5 مم تكفي. والإزاحة المساوية للسماحية تمامًا = Same.</span><span class="en">Even 5 mm over is enough. A shift exactly equal to the tolerance = Same.</span></div>
+ <div class="st"><b>7</b><span class="f">B5 ↔ A3: √(0.000² + 3.600²) = 3.600 &gt; 3.000</span><span class="r">A3 Deleted · B5 Added</span><span class="ar">أبعد من مسافة البحث فما يتطابقن. A3 تبقى بلا زوج = محذوفة، و B5 = مضافة.</span><span class="msa">أبعد من مسافة البحث فلا تتطابقان. تبقى A3 بلا نظير = محذوفة، و B5 = مضافة.</span><span class="en">Further than the search, so no pair. A3 has no partner = deleted, B5 = added.</span></div>
+</div>
+<div class="ok"><span class="ar">النتيجة: 2 Moved · 1 Added · 1 Deleted · 1 Same. القائمة تبدي بالمتحرك الأكبر: B2 0.204 بعدها B4 0.015.</span><span class="msa">النتيجة: 2 Moved · 1 Added · 1 Deleted · 1 Same. تبدأ القائمة بأكبر حركة: B2 0.204 ثم B4 0.015.</span><span class="en">Result: 2 Moved · 1 Added · 1 Deleted · 1 Same. The list starts with the biggest move: B2 0.204, then B4 0.015.</span></div>
+
+<!-- ============================================================ options -->
+<h2 id="opts"><span class="n">6</span><span class="ar">الخيارات</span><span class="msa">الخيارات</span><span class="en">Options</span></h2>
+<dl class="opt">
+  <dt>Tolerance</dt><dd><span class="ar">الإزاحة الأكبر منها = Moved، والأصغر = Same. بوحدة الرسم (م): <code>0.005</code> = 5 ملم (الافتراضي).</span><span class="msa">الإزاحة الأكبر منها = Moved، والأصغر = Same. بوحدة الرسم (م): <code>0.005</code> = 5 مم (الافتراضي).</span><span class="en">A shift above it = Moved, below = Same. Drawing units (m): <code>0.005</code> = 5 mm (default).</span></dd>
+  <dt>Search · auto</dt><dd><span class="ar">لأي مسافة يدوّر على نفس العنصر. auto = نص المسافة الصغيرة بين العناصر. اكتب رقم إذا عندك إزاحات كبيرة.</span><span class="msa">المسافة التي يبحث ضمنها عن العنصر نفسه. auto = نصف المسافة الصغيرة بين العناصر. اكتب رقمًا إذا كانت لديك إزاحات كبيرة.</span><span class="en">How far it looks for the same object. auto = half the small spacing between objects. Type a number for big moves.</span></dd>
+  <dt>Whole / Window</dt><dd><span class="ar">كل الرسم، أو منطقة تأشّرها بزاويتين.</span><span class="msa">الرسم كله، أو منطقة تحددها بزاويتين.</span><span class="en">The whole drawing, or an area picked by two corners.</span></dd>
+  <dt>Labels</dt><dd><span class="ar">يكتب الاسم والإزاحة جنب كل تغيير بالرسم (مؤقت).</span><span class="msa">يكتب الاسم والإزاحة بجانب كل تغيير في الرسم (مؤقتًا).</span><span class="en">Writes the name and the shift next to each change (temporary).</span></dd>
+  <dt>Table</dt><dd><span class="ar">جدول AutoCAD على لير <code>CCOMP-TABLE</code> وارتفاع النص = <code>TEXTSIZE</code>.</span><span class="msa">جدول AutoCAD على الطبقة <code>CCOMP-TABLE</code> وارتفاع النص = <code>TEXTSIZE</code>.</span><span class="en">AutoCAD table on layer <code>CCOMP-TABLE</code>, text height = <code>TEXTSIZE</code>.</span></dd>
+  <dt>PDF / Excel</dt><dd><span class="ar">تقرير A4: الملفات، السماحية، الأعداد الأربعة، رسم ملون للتغييرات، وقائمة بـ ΔE و ΔN (ΔX و ΔY بالرسم المحلي) والإزاحة.</span><span class="msa">تقرير A4: الملفات، والسماحية، والأعداد الأربعة، ورسم ملوّن للتغييرات، وقائمة بـ ΔE و ΔN (ΔX و ΔY في الرسم المحلي) والإزاحة.</span><span class="en">A4 report: files, tolerance, the four counts, a coloured sketch of the changes and the list with ΔE, ΔN (ΔX, ΔY in a local drawing) and shift.</span></dd>
+</dl>
+<div class="note"><span class="ar"><b>Area &amp; tolerance</b> و <b>Objects</b> تنطوي تحت شريط: <b>Edit ▾</b> يفتحها و <b>Hide ▴</b> يسدها، والشريط يبين الإعدادات الحالية (مثلاً Whole · tol 0.005 m · search auto).</span><span class="msa">يُطوى القسمان <b>Area &amp; tolerance</b> و <b>Objects</b> تحت شريط: يفتحهما <b>Edit ▾</b> ويغلقهما <b>Hide ▴</b>، ويعرض الشريط الإعدادات الحالية (مثل Whole · tol 0.005 m · search auto).</span><span class="en"><b>Area &amp; tolerance</b> and <b>Objects</b> fold under a bar: <b>Edit ▾</b> opens them, <b>Hide ▴</b> closes them, and the bar shows the current settings (e.g. Whole · tol 0.005 m · search auto).</span></div>
+<div class="warn"><span class="ar">بالملفين: لازم الرسمين بنفس نظام الإحداثيات ونفس الوحدات.</span><span class="msa">مع ملفين: يجب أن يكون الرسمان بنظام الإحداثيات نفسه والوحدات نفسها.</span><span class="en">With two files: both drawings must be in the same coordinate system and units.</span></div>
+<div class="note"><span class="ar">نقاط COGO بالملف القديم تنقرا بس إذا AutoCAD هو Civil 3D.</span><span class="msa">لا تُقرأ نقاط COGO في الملف القديم إلا إذا كان AutoCAD هو Civil 3D.</span><span class="en">COGO points in the old file are read only when AutoCAD is Civil 3D.</span></div>
+<div class="warn"><span class="ar">تنقارن عناصر Model بس: الـ Layouts والـ Xref ما تنقرا. الملف القديم لازم يكون DWG.</span><span class="msa">تُقارَن عناصر Model فقط: لا تُقرأ الـ Layouts ولا الـ Xref. ويجب أن يكون الملف القديم DWG.</span><span class="en">Only Model space objects are compared; layouts and xrefs are not read. The old file must be a DWG.</span></div>
+
+<!-- ============================================================ faq -->
+<h2 id="faq"><span class="n">7</span><span class="ar">أسئلة شائعة</span><span class="msa">أسئلة شائعة</span><span class="en">Questions</span></h2>
+<details><summary><span class="ar">عنصر متحرك طلع Deleted و Added بدل Moved؟</span><span class="msa">عنصر متحرك ظهر Deleted و Added بدلًا من Moved؟</span><span class="en">A moved object shows as Deleted + Added?</span></summary><span class="ar">تحرك أكثر من مسافة البحث. اكتب رقم أكبر بـ <code>Search</code> (مثلاً 1 أو 2 م) وسوّي Compare مرة ثانية.</span><span class="msa">تحرّك أبعد من مسافة البحث. اكتب رقمًا أكبر في <code>Search</code> (مثل 1 أو 2 م) ونفّذ Compare مرة أخرى.</span><span class="en">It moved further than the search distance. Type a bigger <code>Search</code> (e.g. 1 or 2 m) and Compare again.</span></details>
+<details><summary><span class="ar">شنو الفرق بين CCOMP و SREPORT؟</span><span class="msa">ما الفرق بين CCOMP و SREPORT؟</span><span class="en">CCOMP or SREPORT?</span></summary><span class="ar">CCOMP سريع: يلگه شنو تغيّر بين رسمين. SREPORT تقرير فحص رسمي: سماحية لكل محور، ناجح/راسب، ومعلومات المشروع والتواقيع.</span><span class="msa">CCOMP سريع: يحدد ما تغيّر بين رسمين. أما SREPORT فتقرير فحص رسمي: سماحية لكل محور، ونجاح/رسوب، ومعلومات المشروع والتواقيع.</span><span class="en">CCOMP is quick: it finds what changed between drawings. SREPORT is the formal QC report: tolerance per axis, pass / fail, project info and signatures.</span></details>
+<details><summary><span class="ar">العنصر بالمجموعتين؟</span><span class="msa">عنصر موجود في المجموعتين؟</span><span class="en">An object in both sets?</span></summary><span class="ar">ينشال من المقارنة ويطلع تنبيه، لأنه راح يتقارن ويا نفسه.</span><span class="msa">يُستبعد من المقارنة مع ظهور تنبيه، لأنه سيُقارن بنفسه.</span><span class="en">It is left out with a message, since it would be compared with itself.</span></details>
+<details><summary><span class="ar">رحت لرسم ثاني واختفت الألوان؟</span><span class="msa">انتقلت إلى رسم آخر فاختفت الألوان؟</span><span class="en">I switched drawings and the colours are gone?</span></summary><span class="ar">طبيعي: الألوان مؤقتة وتخص الرسم اللي سوّيت بيه المقارنة. ارجع و <code>Zoom all</code> يرجعها.</span><span class="msa">هذا طبيعي: الألوان مؤقتة وتخص الرسم الذي أُجريت فيه المقارنة. عُد إليه واضغط <code>Zoom all</code> لإظهارها مجددًا.</span><span class="en">Normal: the colours are temporary and belong to the compared drawing. Go back and <code>Zoom all</code> shows them again.</span></details>
+
+<div class="note"><span class="ar"><b>Report options:</b> زر PDF أو Excel يفتح نافذة تختار بيها شنو يطلع بالتقرير، ويا معاينة للصفحات وزوم: العدادات الأربعة، رسم التغييرات، قائمة التغييرات وأعمدتها (Layer، dE / dN، Shift، Note)، وأسطر المعلومات. Summary only يطلع الملخص بدون القائمة. نقرة يمين على الزر يفتح النافذة بدون ما يحفظ ملف.</span><span class="msa"><b>Report options:</b> يفتح زر PDF أو Excel نافذة تختار فيها محتوى التقرير، مع معاينة للصفحات وتكبير: العدادات الأربعة، ورسم التغييرات، وقائمة التغييرات وأعمدتها (Layer، dE / dN، Shift، Note)، وأسطر المعلومات. ويُخرج Summary only الملخص دون القائمة. والنقر الأيمن على الزر يفتح النافذة دون حفظ ملف.</span><span class="en"><b>Report options:</b> PDF or Excel opens a window to choose what goes in the report, with a preview of the pages and zoom: the four counts, the sketch of the changes, the list of changes and its columns (Layer, dE / dN, Shift, Note), and the info lines. Summary only gives the summary without the list. Right-click the button to open the window without saving a file.</span></div>
+<div class="pn"><a href="cbm.html">‹ CBM</a><a href="croute.html">CROUTE ›</a></div>
+</div></main>
+<div class="idea"><span class="ar">💡 <b>عندك فكرة؟</b> تخلّي هاي الأداة أحسن، أو أداة جديدة توفّر عليك وقت؟ احچيلنا، فانت جزء من فريق تصميم هاي الأدوات. نقرا كل رسالة، والأفكار اللي تنفع أكثر المسّاحين تدخل بالإصدارات الجاية. · <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span><span class="msa">💡 <b>لديك فكرة؟</b> تجعل هذه الأداة أفضل، أو أداة جديدة توفّر وقتك؟ أخبرنا، فأنت جزء من فريق تصميم هذه الأدوات. نقرأ كل رسالة، والأفكار التي تفيد أكثر المسّاحين تدخل في الإصدارات القادمة. · <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span><span class="en">💡 <b>Got an idea?</b> Something that would make this tool better, or a new tool that would save you time? Tell us: you are part of the team that designs these tools. We read every message, and the ideas that help most surveyors go into the next versions. · <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span></div>
+<footer><img class="flogo" src="assets/logo.png" alt="">By Eng. Ali · CAD &amp; SURVEY · <a href="index.html"><span class="ar">الدليل</span><span class="msa">الدليل</span><span class="en">Guide</span></a></footer>
+</body>
+</html>

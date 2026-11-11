@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ar" data-l="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coming soon | CAD &amp; SURVEY Tools</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/help.css">
+<script src="assets/videos.js"></script>
+<script src="assets/help.js"></script>
+<style>
+/* soon.html only: illustrated cards of the tools planned for the next versions */
+.s-intro{font-size:17px;color:#3A4452;margin:6px 0 0}
+.soonw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+.nt{position:relative;border:1px solid var(--line);border-radius:14px;background:#fff;display:flex;flex-direction:column;break-inside:avoid;page-break-inside:avoid;overflow:hidden}
+.nt::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:4px;background:var(--gold-line);z-index:1}
+/* the picture */
+.nt .pic{position:relative;background:var(--soft);border-bottom:1px solid var(--line);color:#46525F;height:170px;display:flex;align-items:center;justify-content:center;padding:8px 12px}
+.nt .pic svg{width:100%;height:100%;display:block}
+.nt .tag{position:absolute;top:9px;inset-inline-end:10px;background:var(--head);color:var(--gold-line);border-radius:12px;padding:0 10px;font-size:12px;font-weight:700;line-height:22px;white-space:nowrap}
+/* the words */
+.nt .bd{padding:12px 16px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.nt .t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin:0;font-size:17px;line-height:1.4}
+.nt .t .code{direction:ltr;unicode-bidi:isolate;background:var(--head);color:var(--gold-line);font-family:Consolas,monospace;font-size:14px;font-weight:700;border-radius:7px;padding:1px 9px;line-height:22px}
+.nt .t .nm{direction:ltr;unicode-bidi:isolate}
+.nt .t .pro{margin:0}
+.free{display:inline-block;background:var(--ok-bg);color:var(--ok);border:1px solid #BFE3CA;border-radius:5px;padding:0 6px;font-size:11px;font-weight:800;letter-spacing:.4px;line-height:16px;vertical-align:middle}
+.nt ul.w{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.nt ul.w li{position:relative;padding-inline-start:16px;font-size:14.5px;line-height:1.6}
+.nt ul.w li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.nt .why{margin:auto 0 0;background:var(--gold-soft);border-radius:9px;padding:7px 12px;font-size:14.5px;line-height:1.6;font-weight:600;color:var(--gold-ink)}
+/* the headline card: full width, picture beside the words */
+.nt.feat{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);border:1.5px solid var(--gold-line);box-shadow:0 2px 10px rgba(224,168,0,.12)}
+.nt.feat::before{width:6px}
+.nt.feat .pic{height:auto;border-bottom:none;border-inline-end:1px solid var(--line);background:#fff;padding:10px 12px 12px;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px}
+.nt.feat .tag{position:static;align-self:flex-end;order:-1}
+.nt.feat .pic img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+.nt.feat .bd{padding:16px 20px 18px;gap:10px}
+.nt.feat .big{font-size:12.5px;font-weight:700;color:var(--gold-ink);letter-spacing:.3px}
+.nt.feat .t{font-size:23px}
+.nt.feat .t .code{font-size:17px;line-height:26px;padding:1px 11px}
+.nt.feat .t .pro{font-size:12px;line-height:22px;padding:0 8px}
+.nt.feat ul.w li{font-size:15px}
+.nt.feat .why{font-size:15.5px;padding:9px 14px}
+.kinds{display:flex;flex-wrap:wrap;gap:5px}
+.kinds span{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:0 10px;font-size:12.5px;line-height:23px;color:var(--ink)}
+.rep{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:6px}
+.rep .h{font-size:12.5px;font-weight:700;color:var(--mute)}
+.rep .it{display:flex;flex-wrap:wrap;gap:5px}
+.rep .it>span{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--line);border-radius:7px;padding:0 8px;font-size:12.5px;line-height:23px}
+.rep .it>span::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--gold-line);flex:none}
+.rep .lv{direction:ltr;unicode-bidi:isolate;font-family:Consolas,monospace;font-size:12px;font-weight:700;color:var(--gold-ink)}
+/* SEDIT headline: the 14 icons on dark tiles, like the ribbon */
+.se-ic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 8px;margin:auto 0}
+.se-t{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;text-decoration:none;color:var(--ink);break-inside:avoid}
+.se-t i{width:58px;height:58px;border-radius:11px;background:#11161C;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(17,22,28,.25)}
+.se-t i svg{width:38px;height:38px;display:block}
+.se-t b{direction:ltr;unicode-bidi:isolate;font-size:12.5px;line-height:1.25;font-weight:700}
+.se-t small{font-size:11px;line-height:1.25;color:var(--mute)}
+.se-t:hover i{outline:2px solid var(--gold-line)}
+.nt .pitch{margin:0;font-size:15px;line-height:1.6;color:#3A4452}
+.nt ul.w bdi{white-space:nowrap}
+.nt ul.w .an{direction:ltr;unicode-bidi:isolate;color:var(--ink);white-space:nowrap}
+.nt .more{align-self:flex-start;font-size:14px;font-weight:700;color:var(--gold-ink);text-decoration:none}
+.nt .more:hover{text-decoration:underline}
+/* CPLOT: a picture in a normal card */
+.nt .pic.ph{padding:8px}
+.nt .pic.ph img{width:100%;height:100%;object-fit:contain;display:block}
+/* "your idea could be next" */
+.nt.next{grid-column:1/-1;flex-direction:row;align-items:center;gap:16px;padding:14px 18px;border:2px dashed var(--gold-line);background:#FFFDF3}
+.nt.next::before{display:none}
+.nt.next svg{flex:0 0 64px;height:64px}
+.nt.next .tx{display:grid;gap:4px;font-size:14.5px;line-height:1.65}
+.nt.next h3{margin:0;font-size:18px}
+.nt.next code{white-space:nowrap}
+.nt.next a{color:var(--gold-ink);font-weight:600;word-break:break-all}
+.s-note{font-size:12.5px;color:var(--mute);margin:12px 0 0}
+/* drawing colours (they follow the page colours) */
+.s-paper{fill:#fff}.s-gs{fill:var(--gold-soft)}.s-gf{fill:var(--gold-line)}.s-soft{fill:var(--soft)}
+.s-g{stroke:var(--gold)}.s-red{stroke:var(--warn)}.s-redf{fill:var(--warn)}
+.s-t{fill:currentColor;font:600 8px "Segoe UI",Arial,sans-serif}.s-tg{fill:var(--gold-ink);font:700 8px "Segoe UI",Arial,sans-serif}.s-tw{fill:#fff;font:700 8px "Segoe UI",Arial,sans-serif}
+.s-sand{fill:#EDE6D3}.s-green{fill:#C9D8B6}.s-road{stroke:#fff}.s-roof{fill:#B9C2CC}
+@media (max-width:820px){
+  .nt.feat{grid-template-columns:1fr}
+  .nt.feat .pic{border-inline-end:none;border-bottom:1px solid var(--line)}
+  .nt.feat .pic img{max-width:520px;margin:0 auto}
+}
+@media (max-width:620px){
+  .soonw{grid-template-columns:1fr}
+  .page{padding:16px 14px 20px}
+  .tools-r{flex-wrap:wrap;row-gap:6px}
+  .nt .pic{height:150px}
+  .nt.feat .t{font-size:20px}
+  .nt.next{flex-direction:column;align-items:flex-start;gap:8px}
+  .nt.next svg{flex-basis:auto;width:52px;height:52px}
+}
+@media print{
+  .soonw{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .nt.feat{grid-template-columns:minmax(0,44fr) minmax(0,56fr);box-shadow:none}
+  .nt.feat .pic{border-inline-end:1px solid var(--line);border-bottom:none}
+  .nt.feat .bd{padding:12px 14px 14px;gap:8px}
+  .nt.feat .t{font-size:20px}
+  .nt.feat ul.w li{font-size:13.5px}
+  .nt.feat .why{font-size:14px}
+  .nt.feat .pic{padding:8px 10px 10px}
+  .nt .pic{height:112px;padding:6px 10px}
+  .nt .bd{padding:9px 14px 11px;gap:6px}
+  .nt .t{font-size:16px}
+  .nt ul.w li,.nt .why{font-size:13px;line-height:1.5}
+  .nt .why{padding:6px 10px}
+  .s-intro{font-size:15px}
+  .nt.next{flex-direction:row;padding:10px 14px}
+  .se-ic{gap:8px 4px}.se-t i{width:42px;height:42px}.se-t i svg{width:28px;height:28px}.se-t b{font-size:10.5px}.se-t small{font-size:10px}
+  .nt .pitch{font-size:13.5px;line-height:1.5}.nt .more{display:none}
+  .idea{margin-top:12px}footer{padding:8px 0 0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><img src="assets/logo.png" alt="CAD &amp; SURVEY"><div><b>CAD <span>&amp;</span> SURVEY Tools</b><small><span class="ar">دليل الأدوات · النسخة 2.4</span><span class="msa">دليل الأدوات · الإصدار 2.4</span><span class="en">Tools guide · version 2.4</span></small></div></a>
+  <div class="tools-r">
+    <a class="pdfb ar" href="CAD_SURVEY_Guide_IQ.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none"><path d="M3 1.5h6.5L13 5v9.5H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9.5h5M5.5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>دليل PDF</a><a class="pdfb msa" href="CAD_SURVEY_Guide_MSA.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none"><path d="M3 1.5h6.5L13 5v9.5H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9.5h5M5.5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>دليل PDF</a><a class="pdfb en" href="CAD_SURVEY_Guide_EN.pdf" target="_blank"><svg viewBox="0 0 16 16" fill="none"><path d="M3 1.5h6.5L13 5v9.5H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9.5h5M5.5 12h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>PDF guide</a>
+    <a class="vid" data-video="" href="#"><svg viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M6.5 5.5 11 8l-4.5 2.5z" fill="#3a1d1d"/></svg><span class="ar">الفيديوهات</span><span class="msa">مقاطع الفيديو</span><span class="en">Videos</span></a>
+    <div class="lang"><span data-v="ar" class="on">عراقي</span><span data-v="msa">فصحى</span><span data-v="en">EN</span></div>
+  </div>
+</div></header>
+
+<main><div class="page">
+<div class="crumb"><a href="index.html"><span class="ar">الدليل</span><span class="msa">الدليل</span><span class="en">Guide</span></a> › <span class="ar">قادم قريباً</span><span class="msa">قادم قريبًا</span><span class="en">Coming soon</span></div>
+<h1><span class="ar">🚀 قادم قريباً</span><span class="msa">🚀 قادم قريبًا</span><span class="en">🚀 Coming soon</span></h1>
+<p class="s-intro"><span class="ar">هاي أدوات بالطريق، تنزل بالإصدارات الجاية، وبعضها جانا من أفكاركم.</span><span class="msa">هذه أدوات في الطريق، تصل في الإصدارات القادمة، وبعضها جاء من أفكاركم.</span><span class="en">These tools are on the way in the next versions, and some of them came from your ideas.</span></p>
+
+<div class="soonw">
+
+<!-- ============================================================ 1 CFND (headline) -->
+<section class="nt feat" id="cfnd">
+  <div class="pic">
+    <img src="assets/soon_cfnd.png" alt="CFND report: top plan, isometric, sections A-A and B-B with levels">
+    <span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span>
+  </div>
+  <div class="bd">
+    <div class="big"><span class="ar">★ الأداة الكبيرة الجاية</span><span class="msa">★ الأداة الكبرى القادمة</span><span class="en">★ The big one</span></div>
+    <h3 class="t"><b class="code">CFND</b><span class="nm">Foundations 3D</span><span class="pro">PRO</span></h3>
+    <ul class="w">
+      <li><span class="ar">يحوّل القواعد والبايبات من 2D إلى مجسّمات 3D خفيفة بمناسيبها الحقيقية، والانكر بولتات وياها.</span><span class="msa">يحوّل القواعد والأنابيب من 2D إلى مجسّمات 3D خفيفة بمناسيبها الحقيقية، مع مسامير التثبيت.</span><span class="en">Turns bases and pipelines from 2D into light 3D solids at their real levels, anchor bolts included.</span></li>
+      <li><span class="ar">تأشّر عشرات القواعد مرة وحدة، الأداة تجمعها حسب النوع، وانت تكتب القياسات مرة وحدة لكل نوع.</span><span class="msa">حدّد عشرات القواعد دفعةً واحدة، فتجمعها الأداة حسب النوع، وتُدخل الأبعاد مرةً واحدة لكل نوع.</span><span class="en">Select tens of bases at once: the tool groups them by type, and you enter the sizes once per type.</span></li>
+    </ul>
+    <div class="kinds">
+      <span><span class="ar">سپورتات البايبات</span><span class="msa">دعامات الأنابيب</span><span class="en">Pipe supports</span></span>
+      <span><span class="ar">سليبرات</span><span class="msa">الركائز (Sleepers)</span><span class="en">Sleepers</span></span>
+      <span><span class="ar">قواعد مشتركة</span><span class="msa">قواعد مشتركة</span><span class="en">Combined footings</span></span>
+      <span><span class="ar">بلاطات ويا پيدستلات</span><span class="msa">بلاطات أرضية مع أعمدة قصيرة</span><span class="en">Grade slabs + pedestals</span></span>
+      <span><span class="ar">قواعد الفلير: پيدستل مثمّن وبراغي على دائرة</span><span class="msa">قواعد الشعلة: قاعدة مثمّنة ومسامير على دائرة</span><span class="en">Flare bases: octagonal pedestal, bolts on a ring</span></span>
+      <span><span class="ar">البايبات</span><span class="msa">خطوط الأنابيب</span><span class="en">Pipelines</span></span>
+    </div>
+    <div class="rep">
+      <div class="h"><span class="ar">التقرير يطلع بيه:</span><span class="msa">يتضمّن التقرير:</span><span class="en">The report gives you:</span></div>
+      <div class="it">
+        <span><span class="ar">مسقط</span><span class="msa">مسقط أفقي</span><span class="en">Plan</span></span>
+        <span><span class="ar">أيزومتريك</span><span class="msa">منظور متساوي القياس</span><span class="en">Isometric</span></span>
+        <span><span class="ar">مقاطع بالمناسيب</span><span class="msa">مقاطع بالمناسيب</span><span class="en">Sections with levels</span> <b class="lv">TOB · TOC · TOF · BOC</b></span>
+        <span><span class="ar">جدول الانكر بولتات</span><span class="msa">جدول مسامير التثبيت</span><span class="en">Anchor-bolt table</span> <b class="lv">E · N · Z</b></span>
+        <span>Excel</span>
+      </div>
+    </div>
+    <p class="why"><span class="ar">«كل بولت وكل زاوية تطلع بـ X Y Z ومنسوبها بنقرة وحدة، وما ينسى شي.»</span><span class="msa">«كل مسمار وكل زاوية بإحداثياتها X Y Z ومنسوبها بنقرة واحدة، دون أن يُنسى شيء.»</span><span class="en">“Every bolt and every corner gets its X Y Z and level in one click. Nothing forgotten.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ 1b SEDIT (headline) -->
+<section class="nt feat" id="sedit">
+  <div class="pic">
+    <div class="se-ic">
+      <a class="se-t" href="smartedit.html#moffset"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16 H29" stroke="#E6EAEF" stroke-width="2" stroke-dasharray="5 2 1 2"/><path d="M3 11 H29 M3 6 H29" stroke="#F5C518" stroke-width="2"/><path d="M3 21 H29 M3 26 H29" stroke="#F5C518" stroke-width="2"/></svg></i><b>Multi Offset</b><small class="ar">أوفسيت متعدد</small><small class="msa">إزاحة متعددة</small></a>
+      <a class="se-t" href="smartedit.html#axes"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7 V29 M23 7 V29 M3 14 H29 M3 24 H29" stroke="#E6EAEF" stroke-width="1.6" stroke-dasharray="4 1.5 1 1.5"/><circle cx="9" cy="5" r="3.2" stroke="#F5C518" stroke-width="1.8"/><circle cx="23" cy="5" r="3.2" stroke="#F5C518" stroke-width="1.8"/></svg></i><b>Axes</b><small class="ar">محاور</small><small class="msa">محاور</small></a>
+      <a class="se-t" href="smartedit.html#cmove"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="15" width="12" height="12" rx="1" stroke="#8796A8" stroke-width="1.6" stroke-dasharray="2 2"/><rect x="16" y="4" width="12" height="12" rx="1" stroke="#E6EAEF" stroke-width="2"/><path d="M9 21 L20 12" stroke="#F5C518" stroke-width="1.8"/><path d="M17 11.5 h3.5 v3.5" stroke="#F5C518" stroke-width="1.8"/><circle cx="22" cy="10" r="1.8" fill="#F5C518"/></svg></i><b>Centre Move</b><small class="ar">نقل بالسنتر</small><small class="msa">نقل بالمركز</small></a>
+      <a class="se-t" href="smartedit.html#distrib"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 26 C10 8, 22 8, 29 26" stroke="#E6EAEF" stroke-width="1.8"/><rect x="3.5" y="19" width="5" height="5" fill="#F5C518" transform="rotate(-55 6 21.5)"/><rect x="13.5" y="9.5" width="5" height="5" fill="#F5C518"/><rect x="23.5" y="19" width="5" height="5" fill="#F5C518" transform="rotate(55 26 21.5)"/></svg></i><b>Distribute</b><small class="ar">توزيع</small><small class="msa">توزيع</small></a>
+      <a class="se-t" href="smartedit.html#align"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 27 L29 9" stroke="#E6EAEF" stroke-width="2"/><rect x="6" y="11" width="7" height="5" stroke="#F5C518" stroke-width="1.8" transform="rotate(-34.7 9.5 13.5)"/><rect x="17" y="4" width="7" height="5" stroke="#F5C518" stroke-width="1.8" transform="rotate(-34.7 20.5 6.5)"/><rect x="19" y="20" width="7" height="5" stroke="#8796A8" stroke-width="1.5" stroke-dasharray="2 1.5"/></svg></i><b>Align</b><small class="ar">لف ويا الخط</small><small class="msa">محاذاة</small></a>
+      <a class="se-t" href="smartedit.html#roteach"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="9" height="9" stroke="#E6EAEF" stroke-width="1.8" transform="rotate(20 8.5 8.5)"/><rect x="19" y="4" width="9" height="9" stroke="#E6EAEF" stroke-width="1.8" transform="rotate(20 23.5 8.5)"/><rect x="11" y="18" width="10" height="10" stroke="#E6EAEF" stroke-width="1.8" transform="rotate(20 16 23)"/><path d="M5.5 15 a4 4 0 0 0 6 0 M20.5 15 a4 4 0 0 0 6 0" stroke="#F5C518" stroke-width="1.6"/><circle cx="8.5" cy="8.5" r="1.3" fill="#F5C518"/><circle cx="23.5" cy="8.5" r="1.3" fill="#F5C518"/><circle cx="16" cy="23" r="1.3" fill="#F5C518"/></svg></i><b>Rotate each</b><small class="ar">تدوير كل وحدة</small><small class="msa">تدوير كلٍّ</small></a>
+      <a class="se-t" href="smartedit.html#text"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 H14 M9 6 V14" stroke="#E6EAEF" stroke-width="2.2"/><path d="M4 19 H20 M4 24 H16 M4 29 H22" stroke="#F5C518" stroke-width="2.2"/><path d="M24 5 v9 M21 11 l3 3 3 -3" stroke="#F5C518" stroke-width="1.8"/></svg></i><b>Text tidy</b><small class="ar">ترتيب الكتابات</small><small class="msa">ترتيب النصوص</small></a>
+      <a class="se-t" href="smartedit.html#sdims"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 26 L5 12 L19 6 L27 20 Z" stroke="#E6EAEF" stroke-width="1.8"/><path d="M2 26 V12 M1 13 l1 -2 1 2" stroke="#F5C518" stroke-width="1.3"/><path d="M6 9 L18 3.8" stroke="#F5C518" stroke-width="1.3"/><circle cx="22" cy="27" r="3.5" stroke="#F5C518" stroke-width="1.4"/><path d="M20 29 l4 -4" stroke="#F5C518" stroke-width="1.2"/></svg></i><b>Smart Dims</b><small class="ar">أبعاد ذكية</small><small class="msa">أبعاد ذكية</small></a>
+      <a class="se-t" href="smartedit.html#chain"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22 C11 10, 21 26, 29 12" stroke="#E6EAEF" stroke-width="2"/><path d="M7 13.5 v6 M15 16 v6 M23 15.5 v6" stroke="#F5C518" stroke-width="1.8"/><text x="2" y="31" font-size="6" font-family="Arial" font-weight="700" fill="#F5C518">0+020</text></svg></i><b>Chainage</b><small class="ar">محطات</small><small class="msa">محطات</small></a>
+      <a class="se-t" href="smartedit.html#corner"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 28 V14 a10 10 0 0 1 10 -10 H28" stroke="#E6EAEF" stroke-width="2.2"/><path d="M4 4 L10.8 10.8" stroke="#F5C518" stroke-width="1.6" stroke-dasharray="2 1.5"/><text x="13" y="21" font-size="8" font-family="Arial" font-weight="700" fill="#F5C518">R</text></svg></i><b>Corner R</b><small class="ar">زوايا R</small><small class="msa">زوايا R</small></a>
+      <a class="se-t" href="smartedit.html#flatten"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9 L14 4 L28 9" stroke="#8796A8" stroke-width="1.6" stroke-dasharray="2.5 2"/><path d="M16 11 v8 M13 16 l3 3 3 -3" stroke="#F5C518" stroke-width="1.8"/><path d="M4 24 H28" stroke="#E6EAEF" stroke-width="2.2"/><text x="20" y="31" font-size="6.5" font-family="Arial" font-weight="700" fill="#F5C518">Z=0</text></svg></i><b>Flatten</b><small class="ar">تصفير Z</small><small class="msa">تصفير Z</small></a>
+      <a class="se-t" href="smartedit.html#txt2pt"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><text x="2" y="12" font-size="8" font-family="Consolas,monospace" font-weight="700" fill="#E6EAEF">12.35</text><path d="M16 15 v6 M13 18.5 l3 3 3 -3" stroke="#F5C518" stroke-width="1.8"/><path d="M12 27 h8 M16 23 v8" stroke="#F5C518" stroke-width="1.8"/><circle cx="16" cy="27" r="1.6" fill="#F5C518"/></svg></i><b>Texts → Points</b><small class="ar">كتابات ← نقاط</small><small class="msa">نصوص ← نقاط</small></a>
+      <a class="se-t" href="smartedit.html#ctr2pt"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="11" r="6" stroke="#E6EAEF" stroke-width="1.8"/><circle cx="22" cy="21" r="6" stroke="#E6EAEF" stroke-width="1.8"/><path d="M7.5 11 h5 M10 8.5 v5 M19.5 21 h5 M22 18.5 v5" stroke="#F5C518" stroke-width="1.8"/></svg></i><b>Centres → Points</b><small class="ar">مراكز ← نقاط</small><small class="msa">مراكز ← نقاط</small></a>
+      <a class="se-t" href="smartedit.html#dupes"><i><svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="14" height="14" rx="1.5" stroke="#E6EAEF" stroke-width="1.8"/><rect x="7" y="11" width="14" height="14" rx="1.5" stroke="#F5C518" stroke-width="2.2"/><circle cx="24" cy="8" r="6" fill="#F5C518"/><text x="24" y="10.6" text-anchor="middle" font-size="7" font-family="Arial" font-weight="800" fill="#11161C">×2</text></svg></i><b>Duplicates</b><small class="ar">المكرر</small><small class="msa">المكرّر</small></a>
+    </div>
+    <span class="tag"><span class="ar">🚀 قريباً · PRO</span><span class="msa">🚀 قريبًا · PRO</span><span class="en">🚀 Coming soon · PRO</span></span>
+  </div>
+  <div class="bd">
+    <div class="big"><span class="ar">★ لوحة وحدة · 14 أمر</span><span class="msa">★ لوحة واحدة · 14 أمرًا</span><span class="en">★ One palette · 14 actions</span></div>
+    <h3 class="t"><b class="code">SEDIT</b><span class="nm">Smart Edit</span><span class="pro">PRO</span></h3>
+    <p class="pitch"><span class="ar">14 تعديل ذكي للمسّاحين، كل واحد بنقرة: يسوي شغلة وحدة على عناصر هواية مرة وحدة، وتشوف معاينة ذهبية حيّة قبل ما تثبّت.</span><span class="msa">14 تعديلًا ذكيًا للمسّاحين، كلٌّ منها بنقرة: يؤدي مهمة واحدة على عناصر كثيرة دفعةً واحدة، مع معاينة ذهبية حيّة قبل التثبيت.</span><span class="en">14 one-click smart edits for surveyors: each does ONE job on many objects at once, with a live gold preview before placing.</span></p>
+    <ul class="w">
+      <li><span class="ar"><b class="an">Multi Offset</b>: محور الشارع من التصميم ← خطوط المسار والكيرب والرصيف للتسقيط بخطوة وحدة.</span><span class="msa"><b class="an">Multi Offset</b>: محور الطريق من التصميم ← خطوط المسار والحافة والرصيف للتوقيع بخطوة واحدة.</span><span class="en"><b class="an">Multi Offset</b>: The road centre line from the design → carriageway, curb and sidewalk lines for setting out, in one step.</span></li>
+      <li><span class="ar"><b class="an">Axes</b>: محاور الپايپ راك أو البناية حتى تسقّط الأعمدة وتطابقها ويا الـ <bdi dir="ltr">As-built</bdi>.</span><span class="msa"><b class="an">Axes</b>: محاور حامل الأنابيب أو المبنى لتوقيع الأعمدة ومطابقتها مع المنفَّذ فعليًا (<bdi dir="ltr">As-built</bdi>).</span><span class="en"><b class="an">Axes</b>: Pipe-rack or building axes to set out the columns and check them against the as-built.</span></li>
+      <li><span class="ar"><b class="an">Centre Move / Copy</b>: قاعدة نموذجية وحدة تنزل على كل نقاط السنتر اللي رفعتها.</span><span class="msa"><b class="an">Centre Move / Copy</b>: قاعدة نموذجية واحدة توضع على جميع نقاط المراكز التي رفعتها.</span><span class="en"><b class="an">Centre Move / Copy</b>: One typical foundation dropped on all the centre points you surveyed.</span></li>
+      <li><span class="ar"><b class="an">Distribute</b>: السپورتات حول حلقة التانكي أو على مسار البايب بالمسافة اللي بالتصميم.</span><span class="msa"><b class="an">Distribute</b>: الدعامات حول حلقة الخزان أو على مسار الأنبوب بالتباعد التصميمي.</span><span class="en"><b class="an">Distribute</b>: Supports around a tank ring or along a pipe route at the design spacing.</span></li>
+      <li><span class="ar"><b class="an">Align</b>: القواعد تنلف ويا مسار البايب قبل التسقيط.</span><span class="msa"><b class="an">Align</b>: تُدار القواعد مع مسار الأنبوب قبل التوقيع.</span><span class="en"><b class="an">Align</b>: Footings turned to the pipe route before setting out.</span></li>
+      <li><span class="ar"><b class="an">Rotate / Scale each</b>: الرموز وأسهم الشمال والبلوكات تنعدل بمكانها، بدون ما تتحرك.</span><span class="msa"><b class="an">Rotate / Scale each</b>: تُصحَّح الرموز وأسهم الشمال والكتل في أماكنها دون أن تتحرك.</span><span class="en"><b class="an">Rotate / Scale each</b>: Symbols, north arrows and blocks fixed in place, without moving them.</span></li>
+      <li><span class="ar"><b class="an">Text tidy + Merge</b>: رقم النقطة والمنسوب والوصف المبعثرين ← ليبل واحد مرتب.</span><span class="msa"><b class="an">Text tidy + Merge</b>: رقم النقطة والمنسوب والوصف المتناثرة ← تسمية واحدة مرتبة.</span><span class="en"><b class="an">Text tidy + Merge</b>: Point no., level and description scattered around → one clean label.</span></li>
+      <li><span class="ar"><b class="an">Smart Dims</b>: أضلاع القطعة أو السياج تنقاس وتنكتب لسكتش الزبون.</span><span class="msa"><b class="an">Smart Dims</b>: تُقاس أضلاع القطعة أو السياج وتُكتب لمخطط العميل.</span><span class="en"><b class="an">Smart Dims</b>: Plot or fence sides measured and dimensioned for the client sketch.</span></li>
+      <li><span class="ar"><b class="an">Chainage</b>: محطات على طول المسار مثل مخططات التصميم.</span><span class="msa"><b class="an">Chainage</b>: محطات على امتداد المسار كما في مخططات التصميم.</span><span class="en"><b class="an">Chainage</b>: Stations along the route, just like the design drawings.</span></li>
+      <li><span class="ar"><b class="an">Corner R</b>: تدويرات الكيرب بتقاطعات الشوارع قبل التسقيط.</span><span class="msa"><b class="an">Corner R</b>: تقويسات الحافة عند تقاطعات الطرق قبل التوقيع.</span><span class="en"><b class="an">Corner R</b>: Curb returns at road junctions, before setting out.</span></li>
+      <li><span class="ar"><b class="an">Flatten</b>: Z العشوائي برسومات المقاول ينصلح · <b class="an">Texts → Points</b>: المناسيب المكتوبة تصير مناسيب حقيقية · <b class="an">Centres → Points</b>: سنترات الانكر بولتات للتوتال ستيشن.</span><span class="msa"><b class="an">Flatten</b>: تُصحَّح قيم Z العشوائية في مخططات المقاول · <b class="an">Texts → Points</b>: تصبح المناسيب المكتوبة مناسيب حقيقية · <b class="an">Centres → Points</b>: مراكز مسامير التثبيت لجهاز المحطة الشاملة.</span><span class="en"><b class="an">Flatten</b>: random Z in contractor drawings fixed · <b class="an">Texts → Points</b>: written levels become real levels · <b class="an">Centres → Points</b>: anchor-bolt centres for the total station.</span></li>
+      <li><span class="ar"><b class="an">Duplicates</b> + <b class="an">Overlaps</b>: الخطوط والنقاط المكررة أو الراكبة برسومات المقاول تطلع بدائرة ذهبية، وتنشال أو تندمج بخطوة.</span><span class="msa"><b class="an">Duplicates</b> + <b class="an">Overlaps</b>: تظهر الخطوط والنقاط المكررة أو المتداخلة في مخططات المقاول بدائرة ذهبية، وتُحذف أو تُدمج بخطوة.</span><span class="en"><b class="an">Duplicates</b> + <b class="an">Overlaps</b>: double or overlapping lines and points in contractor drawings glow gold, then go or merge in one step.</span></li>
+    </ul>
+    <p class="why"><span class="ar">«كل أمر = خطوة وحدة، عناصر هواية، المعاينة أول، و Undo وحدة.»</span><span class="msa">«كل أمر = خطوة واحدة، عناصر كثيرة، المعاينة أولًا، وتراجع واحد.»</span><span class="en">“Every action = one step, many objects, preview first, one Undo.”</span></p>
+    <a class="more" href="smartedit.html"><span class="ar">🖼 شوف الـ 14 أمر بالصور ›</span><span class="msa">🖼 شاهد الأوامر الـ 14 بالصور ›</span><span class="en">🖼 See the 14 actions with pictures ›</span></a>
+  </div>
+</section>
+
+<!-- ============================================================ 2 CSHEET -->
+<section class="nt" id="csheet">
+  <div class="pic"><svg viewBox="0 0 240 130" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect class="s-paper" x="8" y="6" width="224" height="118" rx="4" stroke="currentColor" stroke-width="2"/>
+    <!-- plan strip -->
+    <path d="M14 58H226" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+    <path d="M14 26C50 26 60 44 96 42S150 22 186 30 214 44 226 40" stroke="currentColor" stroke-width="7" opacity=".08"/>
+    <path class="s-g" d="M14 26C50 26 60 44 96 42S150 22 186 30 214 44 226 40" stroke-width="2.4"/>
+    <path d="M128 12V54M134 12V54" stroke="currentColor" stroke-width="1.3" opacity=".55"/>
+    <g stroke="currentColor" stroke-width="1.4"><path d="M40 22v8M78 36v8M116 33v8M154 26v8M192 27v8"/></g>
+    <circle class="s-gf" cx="96" cy="42" r="3" stroke="currentColor" stroke-width="1.2"/><circle class="s-gf" cx="186" cy="30" r="3" stroke="currentColor" stroke-width="1.2"/>
+    <text class="s-t" x="31" y="17" style="font-size:7px">0+000</text><text class="s-t" x="107" y="17" style="font-size:7px">0+500</text><text class="s-t" x="183" y="20" style="font-size:7px">1+000</text>
+    <!-- profile strip -->
+    <path d="M14 104H226M14 64V104" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+    <g stroke="currentColor" stroke-width=".8" opacity=".25"><path d="M40 64V104M78 64V104M116 64V104M154 64V104M192 64V104"/></g>
+    <path d="M14 76 40 72 64 80 96 74 128 82 160 70 192 76 226 72" stroke="currentColor" stroke-width="2"/>
+    <path class="s-g" d="M14 86 96 84 128 92 160 82 226 84" stroke-width="2.4"/>
+    <path d="M128 64V104M134 64V104" stroke="currentColor" stroke-width="1" opacity=".35" stroke-dasharray="2 2"/>
+    <!-- title block -->
+    <path d="M8 108H232M150 108V124M196 108V124" stroke="currentColor" stroke-width="1.2"/>
+    <rect class="s-gf" x="200" y="111" width="10" height="10" rx="2"/>
+    <path d="M16 116H90M156 113H188M156 119H178M214 116H226" stroke="currentColor" stroke-width="1.6" opacity=".4"/>
+    <text class="s-tg" x="104" y="119">1 / 8</text>
+  </svg><span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span></div>
+  <div class="bd">
+    <h3 class="t"><b class="code">CSHEET</b><span class="nm">Alignment Sheet</span><span class="pro">PRO</span></h3>
+    <ul class="w">
+      <li><span class="ar">شيتات مسقط وبروفايل لبايب أو شارع على طول المسار، صفحة بصفحة.</span><span class="msa">لوحات مسقط ومقطع طولي لخط أنابيب أو طريق على امتداد المسار، صفحةً بعد صفحة.</span><span class="en">Plan and profile sheets of a pipeline or a road along the route, page by page.</span></li>
+      <li><span class="ar">بيها المحطات، التقاطعات، نقاط الانكسار، وجدول العنوان.</span><span class="msa">تتضمّن المحطات والتقاطعات ونقاط الانكسار وجدول العنوان.</span><span class="en">Stations, crossings, vertices and the title block included.</span></li>
+    </ul>
+    <p class="why"><span class="ar">«مسار 10 كم يطلع شيتات جاهزة للتسليم، بدون ما ترسم كل شيت بإيدك.»</span><span class="msa">«مسار طوله 10 كم يخرج لوحاتٍ جاهزة للتسليم، دون رسم كل لوحة يدويًا.»</span><span class="en">“A 10 km route comes out as sheets ready to hand over, without drawing each one by hand.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ 2b CPLOT -->
+<section class="nt" id="cplot">
+  <div class="pic ph"><img src="assets/soon_cplot.png" alt="Smart Print sheet: parts A, B, C, detail D, areas table, key plan, north arrow, scale bar and title block"><span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span></div>
+  <div class="bd">
+    <h3 class="t"><b class="code">CPLOT</b><span class="nm">Smart Print</span><span class="pro">PRO</span></h3>
+    <ul class="w">
+      <li><span class="ar">PDF احترافي بلا إعدادات طباعة: أشّر شبابيك من أي مكان بالرسم، وتطلع شيتات ويا ڤيوپورتات وجدول عنوان يتعبّى من معلومات المشروع.</span><span class="msa">PDF احترافي دون إعدادات طباعة: حدّد نوافذ من أي مكان في الرسم، فتخرج لوحات بإطارات عرض وجدول عنوان يُملأ من معلومات المشروع.</span><span class="en">Professional PDFs with no plot setup: pick windows anywhere, get sheets with viewports and a title block filled from Project info.</span></li>
+      <li><span class="ar">3 أوضاع: مقياس حقيقي · تقريب (الأجزاء البعيدة تتجمّع بشيت واحد ويا مخطط مفتاحي) · سكتش بدون مقياس.</span><span class="msa">3 أوضاع: مقياس حقيقي · تقريب (تُجمع الأجزاء البعيدة في لوحة واحدة مع مخطط مفتاحي) · مخطط دون مقياس.</span><span class="en">Modes: True scale · Close-up (far parts gathered on one sheet + key plan) · Sketch (not to scale).</span></li>
+      <li><span class="ar">يفحص الوضوح ويقسّم على شيتات متسلسلة، مكبّر للتفاصيل، والمخطط المفتاحي والشمال ومسطرة المقياس والجدول بكل شيت.</span><span class="msa">يفحص الوضوح ويقسّم إلى لوحات متسلسلة، مع مكبّر للتفاصيل، والمخطط المفتاحي والشمال ومقياس الرسم والجدول في كل لوحة.</span><span class="en">Readability check and split into chained sheets, detail magnifier; key plan, north arrow, scale bar and table on every sheet.</span></li>
+      <li><span class="ar">سماكات الخطوط مضبوطة للطباعة، وصورة جاهزة للواتساب.</span><span class="msa">سماكات الخطوط مضبوطة للطباعة، وصورة جاهزة للواتساب.</span><span class="en">Line weights tamed for print, plus a WhatsApp-ready image.</span></li>
+    </ul>
+    <p class="why"><span class="ar">«شبابيك من أي مكان بالرسم ← شيتات PDF مرتبة، بلا Page Setup.»</span><span class="msa">«نوافذ من أي مكان في الرسم ← لوحات PDF مرتبة، دون Page Setup.»</span><span class="en">“Windows from anywhere in the drawing → neat PDF sheets, no Page Setup.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ 3 CPDF -->
+<section class="nt" id="cpdf">
+  <div class="pic"><svg viewBox="0 0 240 130" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- the PDF page -->
+    <path class="s-paper" d="M22 10H74L92 28V120H22Z" stroke="currentColor" stroke-width="2"/>
+    <path d="M74 10V28H92" stroke="currentColor" stroke-width="2"/>
+    <rect class="s-redf" x="14" y="16" width="34" height="15" rx="3"/>
+    <text class="s-tw" x="20" y="27" style="font-size:9px">PDF</text>
+    <g stroke="currentColor" stroke-width="1.6" opacity=".35"><path d="M32 100V54H66L82 70V100Z"/><path d="M32 78H82"/><path d="M50 54C50 66 60 70 66 70"/></g>
+    <path d="M34 110H62" stroke="currentColor" stroke-width="1.6" opacity=".3"/>
+    <!-- arrow -->
+    <path class="s-g" d="M104 65H136" stroke-width="4"/><path class="s-g" d="M128 55 140 65 128 75" stroke-width="4"/>
+    <!-- CAD -->
+    <rect class="s-paper" x="150" y="10" width="80" height="110" rx="5" stroke="currentColor" stroke-width="2"/>
+    <path d="M150 22H230" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
+    <circle cx="157" cy="16" r="1.6" fill="currentColor" opacity=".5"/><circle cx="163" cy="16" r="1.6" fill="currentColor" opacity=".5"/>
+    <g stroke="currentColor" stroke-width="2"><path d="M162 100V54H196L212 70V100Z"/><path d="M162 78H212"/></g>
+    <path class="s-g" d="M180 54C180 66 190 70 196 70" stroke-width="2.2"/>
+    <g class="s-gf" stroke="currentColor" stroke-width="1"><rect x="159.5" y="51.5" width="5" height="5"/><rect x="193.5" y="51.5" width="5" height="5"/><rect x="209.5" y="67.5" width="5" height="5"/><rect x="209.5" y="97.5" width="5" height="5"/><rect x="159.5" y="97.5" width="5" height="5"/></g>
+    <path d="M162 110H212M162 107V113M212 107V113" stroke="currentColor" stroke-width="1"/>
+    <text class="s-tg" x="176" y="44">1 : 100</text>
+  </svg><span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span></div>
+  <div class="bd">
+    <h3 class="t"><b class="code">CPDF</b><span class="nm">PDF to CAD</span><span class="free"><span class="ar">مجانية</span><span class="msa">مجانية</span><span class="en">FREE</span></span></h3>
+    <ul class="w">
+      <li><span class="ar">يرجّع الخطوط والأقواس والنصوص من رسم PDF إلى AutoCAD.</span><span class="msa">يعيد الخطوط والأقواس والنصوص من رسم PDF إلى AutoCAD.</span><span class="en">Brings lines, arcs and texts from a PDF drawing back into AutoCAD.</span></li>
+      <li><span class="ar">وبالمقياس الصحيح، خطوط حقيقية مو صورة.</span><span class="msa">وبالمقياس الصحيح، خطوطًا حقيقية لا صورة.</span><span class="en">At the right scale, as real lines, not a picture.</span></li>
+    </ul>
+    <p class="why"><span class="ar">«الاستشاري دزلك PDF بس؟ اشتغل عليه كأنه DWG.»</span><span class="msa">«أرسل الاستشاري ملف PDF فقط؟ اعمل عليه كأنه DWG.»</span><span class="en">“The consultant only sent a PDF? Work on it like a DWG.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ 4 CIMAGE -->
+<section class="nt" id="cimage">
+  <div class="pic"><svg viewBox="0 0 240 130" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect class="s-sand" x="34" y="12" width="172" height="104"/>
+    <path class="s-green" d="M34 12H86C80 30 60 34 34 40Z"/><path class="s-green" d="M206 82C180 86 168 104 170 116H206Z"/>
+    <path class="s-road" d="M34 74C80 70 120 80 206 58" stroke-width="7"/><path class="s-road" d="M120 12C118 50 130 90 126 116" stroke-width="5"/>
+    <path d="M34 74C80 70 120 80 206 58" stroke="currentColor" stroke-width=".8" opacity=".35" stroke-dasharray="4 3"/>
+    <g class="s-roof" stroke="currentColor" stroke-width=".8" stroke-opacity=".5"><rect x="58" y="48" width="18" height="12"/><rect x="80" y="44" width="12" height="16"/><rect x="140" y="80" width="22" height="14"/><rect x="58" y="86" width="16" height="18"/></g>
+    <g class="s-paper" stroke="currentColor" stroke-width="1.2" stroke-opacity=".6"><circle cx="152" cy="34" r="9"/><circle cx="176" cy="34" r="9"/><circle cx="164" cy="52" r="6"/></g>
+    <!-- coordinate grid -->
+    <g class="s-g" stroke-width="1" stroke-dasharray="3 3"><path d="M77 12V116M120 12V116M163 12V116M34 38H206M34 64H206M34 90H206"/></g>
+    <rect x="34" y="12" width="172" height="104" stroke="currentColor" stroke-width="2.2"/>
+    <g stroke="currentColor" stroke-width="1.4"><path d="M77 116v5M120 116v5M163 116v5M34 38h-5M34 64h-5M34 90h-5"/></g>
+    <text class="s-t" x="68" y="128" style="font-size:7px">E 650</text><text class="s-t" x="111" y="128" style="font-size:7px">E 700</text><text class="s-t" x="154" y="128" style="font-size:7px">E 750</text>
+    <text class="s-t" x="4" y="41" style="font-size:7px">N 380</text><text class="s-t" x="4" y="67" style="font-size:7px">N 330</text><text class="s-t" x="4" y="93" style="font-size:7px">N 280</text>
+    <path d="M222 30V14M218 20l4-6 4 6" stroke="currentColor" stroke-width="1.6"/><text class="s-t" x="219" y="40" style="font-size:9px">N</text>
+  </svg><span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span></div>
+  <div class="bd">
+    <h3 class="t"><b class="code">CIMAGE</b><span class="nm">Aerial Image</span><span class="pro">PRO</span></h3>
+    <ul class="w">
+      <li><span class="ar">صورة جوية للموقع تنزل بمكانها الصحيح بالرسم.</span><span class="msa">صورة جوية للموقع توضع في مكانها الصحيح داخل الرسم.</span><span class="en">An aerial picture of the site, placed in its right spot in the drawing.</span></li>
+      <li><span class="ar">ويا شبكة إحداثيات، وجاهزة للطباعة.</span><span class="msa">مع شبكة إحداثيات، وجاهزة للطباعة.</span><span class="en">With a coordinate grid, ready to print.</span></li>
+    </ul>
+    <p class="why"><span class="ar">«الإدارة تفهم الموقع من أول نظرة، والإحداثيات على الإطار.»</span><span class="msa">«تفهم الإدارة الموقع من النظرة الأولى، والإحداثيات على الإطار.»</span><span class="en">“The office gets the site at first glance, with coordinates on the frame.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ 5 CADJ -->
+<section class="nt" id="cadj">
+  <div class="pic"><svg viewBox="0 0 240 130" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- measured traverse (does not close) -->
+    <path d="M40 104 70 34 136 22 176 74 128 112 47 108" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 3" opacity=".55"/>
+    <!-- adjusted traverse (closes) -->
+    <path class="s-g" d="M40 104 68 36 133 26 172 77 124 112Z" stroke-width="2.4"/>
+    <g class="s-g" stroke-width="1.4"><path d="M70 34 68.6 35.6M136 22 133.8 25"/><path d="M176 74 173 76.4M128 112 125 112"/></g>
+    <g fill="currentColor"><circle cx="70" cy="34" r="2"/><circle cx="136" cy="22" r="2"/><circle cx="176" cy="74" r="2"/><circle cx="128" cy="112" r="2"/></g>
+    <g class="s-gf" stroke="currentColor" stroke-width="1.2"><circle cx="40" cy="104" r="4"/><circle cx="68" cy="36" r="3"/><circle cx="133" cy="26" r="3"/><circle cx="172" cy="77" r="3"/><circle cx="124" cy="112" r="3"/></g>
+    <!-- misclosure -->
+    <path class="s-red" d="M40 104 47 108" stroke-width="2"/><circle cx="47" cy="108" r="2.6" class="s-redf"/>
+    <text class="s-t" x="52" y="122" style="font-size:7.5px;fill:var(--warn)">e = 0.012 m</text>
+    <text class="s-t" x="22" y="100" style="font-size:8px">A</text>
+    <!-- ratio -->
+    <rect class="s-gs" x="170" y="12" width="62" height="34" rx="6" stroke="var(--gold)" stroke-width="1.4"/>
+    <text class="s-tg" x="176" y="26" style="font-size:7px">PRECISION</text>
+    <text class="s-tg" x="176" y="40" style="font-size:10.5px">1 : 25 000</text>
+    <path d="M198 98l8 8 16-18" stroke="var(--ok)" stroke-width="4"/>
+  </svg><span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span></div>
+  <div class="bd">
+    <h3 class="t"><b class="code">CADJ</b><span class="nm">Closure Fix</span><span class="free"><span class="ar">مجانية</span><span class="msa">مجانية</span><span class="en">FREE</span></span></h3>
+    <ul class="w">
+      <li><span class="ar">تصحيح المضلّع ودورة التسوية: يحسب خطأ الغلق ويوزّعه.</span><span class="msa">تصحيح المضلّع ودورة التسوية: يحسب خطأ الإغلاق ويوزّعه.</span><span class="en">Traverse and levelling-loop adjustment: finds the misclosure and spreads the error.</span></li>
+      <li><span class="ar">ويطلع تقرير سريع بالدقة.</span><span class="msa">ويُخرج تقريرًا سريعًا بالدقة.</span><span class="en">Then gives a quick report with the precision.</span></li>
+    </ul>
+    <p class="why"><span class="ar">«نسبة الدقة <bdi dir="ltr">1 : 25 000</bdi> جاهزة قبل ما يسألك الاستشاري.»</span><span class="msa">«نسبة الدقة <bdi dir="ltr">1 : 25 000</bdi> جاهزة قبل أن يسألك الاستشاري.»</span><span class="en">“The 1 : 25 000 ratio is ready before the consultant asks.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ 6 CVOICE -->
+<section class="nt" id="cvoice">
+  <div class="pic"><svg viewBox="0 0 240 130" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- microphone -->
+    <rect x="22" y="26" width="26" height="46" rx="13" class="s-gs" stroke="var(--gold)" stroke-width="2.4"/>
+    <path d="M30 40h10M30 48h10M30 56h10" stroke="var(--gold)" stroke-width="1.4"/>
+    <path d="M14 56c0 14 10 24 21 24s21-10 21-24M35 80v14M25 96h20" stroke="currentColor" stroke-width="2.2"/>
+    <!-- sound waves -->
+    <path d="M62 44c4 5 4 13 0 18M70 38c7 9 7 21 0 30M78 32c10 13 10 29 0 42" class="s-g" stroke-width="2"/>
+    <!-- spoken words -->
+    <text class="s-t" x="94" y="22" style="font-size:7px">“seven two two six zero zero point one two three … next …”</text>
+    <!-- command line with the number -->
+    <rect x="94" y="34" width="138" height="56" rx="8" stroke="currentColor" stroke-width="1.4" opacity=".7"/>
+    <text class="s-t" x="102" y="50" style="font-size:7.5px">Specify a point:</text>
+    <text class="s-tg" x="102" y="66" style="font-size:11.5px;font-family:Consolas,monospace">722600.123,</text>
+    <text class="s-tg" x="102" y="81" style="font-size:11.5px;font-family:Consolas,monospace">3375400.456</text>
+    <path d="M206 64l6 6 12-14" stroke="var(--ok)" stroke-width="3.4"/>
+    <!-- checks -->
+    <text class="s-t" x="96" y="106" style="font-size:7.5px">E 6 digits ✓ · N 7 digits ✓ · read back 🔊</text>
+  </svg><span class="tag"><span class="ar">🚀 قريباً</span><span class="msa">🚀 قريبًا</span><span class="en">🚀 Soon</span></span></div>
+  <div class="bd">
+    <h3 class="t"><b class="code">CVOICE</b><span class="nm">Voice Input</span><span class="pro">PRO</span></h3>
+    <ul class="w">
+      <li><span class="ar">اضغط 🎤 واقرا الإحداثيات بصوتك بالإنگليزي: أرقام مفردة أو مثل <bdi dir="ltr" style="white-space:nowrap">twenty five</bdi>، و <bdi dir="ltr">point</bdi>، و <bdi dir="ltr">next</bdi>.</span><span class="msa">اضغط 🎤 واقرأ الإحداثيات بصوتك بالإنجليزية: أرقامًا مفردة أو مثل <bdi dir="ltr" style="white-space:nowrap">twenty five</bdi>، و <bdi dir="ltr">point</bdi>، و <bdi dir="ltr">next</bdi>.</span><span class="en">Press 🎤 and read the coordinates aloud in English: single digits or numbers like “twenty five”, plus “point” and “next”.</span></li>
+      <li><span class="ar">ينكتب بأوامر الأوتوكاد وبخانات أدواتنا، ويتأكد من عدد الأرقام ويعيد قراءته إلك قبل الرسم.</span><span class="msa">يُكتب في أوامر AutoCAD وفي خانات أدواتنا، ويتحقق من عدد الأرقام ويقرؤه لك قبل الرسم.</span><span class="en">It goes into AutoCAD prompts and our tool boxes, checks the digit count and reads it back before drawing.</span></li>
+    </ul>
+    <p class="note"><span class="ar">🔇 بالمكتب أحسن: الضوضاء والأصوات العالية تشوّش التعرّف. انطق بوضوح وبهدوء، رقم رقم.</span><span class="msa">🔇 الأفضل في المكتب: الضوضاء والأصوات العالية تشوّش التعرّف. انطق بوضوح وبهدوء، رقمًا رقمًا.</span><span class="en">🔇 Best in the office: noise and loud voices disturb the recognition. Speak clearly and calmly, number by number.</span></p>
+    <p class="why"><span class="ar">«عينك على ورقة المقاول، وصوتك يكتب الإحداثيات.»</span><span class="msa">«عينك على ورقة المقاول، وصوتك يكتب الإحداثيات.»</span><span class="en">“Eyes on the contractor’s sheet, your voice types the coordinates.”</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ your idea -->
+<section class="nt next" id="idea">
+  <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="32" cy="32" r="30" class="s-gs" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M25 44h14M27 49h10M32 13c-8 0-13 6-13 13 0 6 4 9 6 12h14c2-3 6-6 6-12 0-7-5-13-13-13Z" stroke="var(--gold-ink)" stroke-width="2.6"/>
+    <path d="M32 22v10M27 27h10" stroke="var(--gold)" stroke-width="2.6"/>
+  </svg>
+  <div class="tx">
+    <h3><span class="ar">فكرتك ممكن تكون الجاية</span><span class="msa">قد تكون فكرتك القادمة</span><span class="en">Your idea could be next</span></h3>
+    <span class="ar">دزها من <bdi dir="ltr"><code>CSABOUT</code> › 💡 Suggest an idea</bdi>، أو على <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span><span class="msa">أرسلها من <bdi dir="ltr"><code>CSABOUT</code> › 💡 Suggest an idea</bdi>، أو إلى <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span><span class="en">Send it from <bdi dir="ltr"><code>CSABOUT</code> › 💡 Suggest an idea</bdi>, or to <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span>
+  </div>
+</section>
+
+</div>
+
+<p class="s-note"><span class="ar">الأدوات تنزل بالإصدارات الجاية، والتفاصيل ممكن تتغيّر شوية لحد ما تجهز.</span><span class="msa">تصل الأدوات في الإصدارات القادمة، وقد تتغيّر التفاصيل قليلًا حتى تجهز.</span><span class="en">These tools come in the next versions; details may change a little until they are ready.</span></p>
+
+<div class="pn"><a href="index.html">‹ <span class="ar">الدليل</span><span class="msa">الدليل</span><span class="en">Guide</span></a><a href="smartedit.html">Smart Edit · <span class="ar">الـ 14 أمر</span><span class="msa">الأوامر الـ 14</span><span class="en">the 14 actions</span> ›</a></div>
+</div></main>
+<div class="idea"><span class="ar">💡 <b>عندك فكرة؟</b> تخلّي هاي الأدوات أحسن، أو أداة جديدة توفّر عليك وقت؟ احچيلنا، فانت جزء من فريق تصميم هاي الأدوات. نقرا كل رسالة، والأفكار اللي تنفع أكثر المسّاحين تدخل بالإصدارات الجاية. · <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span><span class="msa">💡 <b>لديك فكرة؟</b> تجعل هذه الأدوات أفضل، أو أداة جديدة توفّر وقتك؟ أخبرنا، فأنت جزء من فريق تصميم هذه الأدوات. نقرأ كل رسالة، والأفكار التي تفيد أكثر المسّاحين تدخل في الإصدارات القادمة. · <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span><span class="en">💡 <b>Got an idea?</b> Something that would make these tools better, or a new tool that would save you time? Tell us: you are part of the team that designs these tools. We read every message, and the ideas that help most surveyors go into the next versions. · <a href="mailto:eng.alicadsurvey@gmail.com">eng.alicadsurvey@gmail.com</a></span></div>
+<footer><img class="flogo" src="assets/logo.png" alt="">By Eng. Ali · CAD &amp; SURVEY · <a href="index.html"><span class="ar">الدليل</span><span class="msa">الدليل</span><span class="en">Guide</span></a></footer>
+</body>
+</html>
