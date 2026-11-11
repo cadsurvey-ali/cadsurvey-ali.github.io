@@ -369,3 +369,4 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 .thumbs .doc{display:flex;align-items:center;justify-content:center;padding:6px;font-size:11px;font-weight:700;text-align:center;word-break:break-all;width:100%;height:100%;background:var(--panel2);color:var(--text2)}
 .vparts{display:flex;flex-direction:column;gap:8px}.vparts .vpart{justify-content:flex-start;gap:10px;text-align:start}
 .soulcard{display:grid!important}@media(min-width:900px){.soulcard{grid-template-columns:repeat(3,1fr)}.soulcard .sec-h{grid-column:1/-1}}
+@keyframes csFade{from{opacity:0}to{opacity:1}}

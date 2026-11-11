@@ -100,7 +100,7 @@
     sh.classList.add('open'); D.body.classList.add('locked');
     var cl = $('[data-close]', sh); if (cl) setTimeout(function () { cl.focus(); }, 50);
   }
-  function sheetClose() { $$('video.loopvid').forEach(function (v) { v.pause(); });
+  function sheetClose() { stopCycle(); $$('video.loopvid').forEach(function (v) { v.pause(); });
     if (!openSheet) return; openSheet.el.classList.remove('open'); D.body.classList.remove('locked'); openSheet = null;
     if (lastFocus) lastFocus.focus();
   }
@@ -117,18 +117,26 @@
   // no flash of the drawing); every other tool keeps the drawn animation
   var LOOPDIR = C.LOOPS || 'assets/tool-loops/', loopList = null;
   try { fetch(LOOPDIR + 'manifest.json').then(function (r) { return r.ok ? r.json() : {}; }).then(function (j) { loopList = j || {}; }, function () { loopList = {}; }); } catch (e) { loopList = {}; }
-  function loopVid(sh, cmd) {
+  // tools with a real clip alternate: drawn animation (~4.5 s) → the clip once → the drawing again … (Ali 11-11)
+  var cyc = null, ANIM_MS = 4500;
+  function stopCycle() { if (cyc) { clearTimeout(cyc.t); cyc.v.onended = null; cyc.v.pause(); cyc = null; } }
+  function fadeIn(el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = 'csFade .35s ease-out'; }
+  function loopVid(sh, cmd, kind) {
+    stopCycle();
     var svg = $('svg.anim', sh); if (!svg) return;
     var v = $('video.loopvid', sh);
-    if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
-    v.pause(); v.innerHTML = ''; v.removeAttribute('poster'); v.onerror = null;
-    var has = cmd && loopList && loopList[cmd];
-    if (!has) { v.hidden = true; svg.style.display = ''; return; }
-    var base = LOOPDIR + cmd;
-    svg.style.display = 'none'; v.hidden = false; v.poster = base + '.jpg';
+    if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.playsInline = true; v.preload = 'auto'; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
+    v.pause(); v.loop = false; v.innerHTML = ''; v.removeAttribute('poster'); v.hidden = true; svg.style.display = '';
+    if (!(cmd && loopList && loopList[cmd])) return;            // no clip → the drawing only
+    var base = LOOPDIR + cmd, c = cyc = { v: v, t: null };
+    v.poster = base + '.jpg';
     ['webm', 'mp4'].forEach(function (x) { var so = D.createElement('source'); so.src = base + '.' + x; so.type = 'video/' + x; v.appendChild(so); });
-    v.lastChild.onerror = function () { v.hidden = true; svg.style.display = ''; };   // clip missing → back to the drawing
-    v.load(); var p = v.play(); if (p && p.catch) p.catch(function () {});
+    v.lastChild.onerror = function () { if (cyc === c) stopCycle(); v.hidden = true; svg.style.display = ''; };
+    v.load();
+    function phaseAnim() { if (cyc !== c) return; v.pause(); v.hidden = true; svg.style.display = ''; fadeIn(svg); showAnim(sh, kind); c.t = setTimeout(phaseVid, ANIM_MS); }
+    function phaseVid() { if (cyc !== c) return; svg.style.display = 'none'; v.hidden = false; fadeIn(v); try { v.currentTime = 0; } catch (e) {} var p = v.play(); if (p && p.catch) p.catch(phaseAnim); }
+    v.onended = phaseAnim;
+    c.t = setTimeout(phaseVid, ANIM_MS);                          // the drawing is already playing (showAnim ran just before)
   }
   // tools / app tools
   var tsh = $('#toolSheet');
@@ -164,7 +172,7 @@
         if (vs) vs.hidden = vids.length > 0;
         var gd = $('[data-s="guide"]', tsh); if (gd && d.cmd) gd.href = (C.GUIDE || 'guide/') + d.cmd.toLowerCase() + '.html';
         var tn = $('[data-s="training"]', tsh); if (tn) { tn.hidden = !d.train; if (d.train) tn.href = (C.TRAINING || 'training/') + d.train + '.zip'; }
-        showAnim(tsh, d.kind); loopVid(tsh, d.cmd);
+        showAnim(tsh, d.kind); loopVid(tsh, d.cmd, d.kind);
       });
     });
   });
