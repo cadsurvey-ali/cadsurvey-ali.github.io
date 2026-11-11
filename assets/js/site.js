@@ -117,11 +117,12 @@
     var svg = $('svg.anim', sh); if (!svg) return;
     var v = $('video.loopvid', sh);
     if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
-    v.pause(); v.hidden = true; svg.hidden = false; v.innerHTML = ''; v.removeAttribute('poster'); v.oncanplay = null;
+    v.pause(); v.hidden = true; svg.style.display = ''; v.innerHTML = ''; v.removeAttribute('poster'); v.oncanplay = null;
     if (!cmd) return;
     var base = (C.LOOPS || 'assets/tool-loops/') + cmd;
+    v.poster = base + '.jpg';
     ['webm', 'mp4'].forEach(function (x) { var so = D.createElement('source'); so.src = base + '.' + x; so.type = 'video/' + x; v.appendChild(so); });
-    v.oncanplay = function () { v.oncanplay = null; svg.hidden = true; v.hidden = false; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    v.oncanplay = function () { v.oncanplay = null; svg.style.display = 'none'; v.hidden = false; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
     v.load();
   }
   // tools / app tools
