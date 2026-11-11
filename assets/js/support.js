@@ -95,10 +95,10 @@
   }
   // screenshots: pick, drop, paste
   var drop = $('#drop'), inp = $('#mShots'), thumbs = $('#thumbs');
-  function addFiles(list) { Array.prototype.forEach.call(list, function (f) { if (/^image\//.test(f.type) && files.length < 8) files.push(f); }); drawThumbs(); }
+  function addFiles(list) { Array.prototype.forEach.call(list, function (f) { if ((/^image\//.test(f.type) || /\.(pdf|xlsx?|csv|dxf)$/i.test(f.name)) && files.length < 8 && f.size < 15e6) files.push(f); }); drawThumbs(); }
   function drawThumbs() {
     thumbs.innerHTML = '';
-    files.forEach(function (f, i) { var fg = el('figure'), im = el('img'), x = el('button', null, '✕'); im.alt = f.name; im.src = URL.createObjectURL(f); x.type = 'button'; x.setAttribute('aria-label', 'remove'); x.addEventListener('click', function () { files.splice(i, 1); drawThumbs(); }); fg.appendChild(im); fg.appendChild(x); thumbs.appendChild(fg); });
+    files.forEach(function (f, i) { var fg = el('figure'), isImg = /^image\//.test(f.type), im = isImg ? el('img') : el('span', 'doc', f.name), x = el('button', null, '✕'); if (isImg) { im.alt = f.name; im.src = URL.createObjectURL(f); } x.type = 'button'; x.setAttribute('aria-label', 'remove'); x.addEventListener('click', function () { files.splice(i, 1); drawThumbs(); }); fg.appendChild(im); fg.appendChild(x); thumbs.appendChild(fg); });
   }
   drop.addEventListener('click', function () { inp.click(); });
   drop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); inp.click(); } });
@@ -125,7 +125,7 @@
     }
   });
   if (!C.SUPPORT_ENDPOINT) $('#attachNote').hidden = false;
-  var qp = (location.search.match(/[?&]type=(\w+)/) || [])[1]; if (qp) setKind(qp);
+  var qp = (location.search.match(/[?&]type=(\w+)/) || [])[1]; if (qp) setKind(qp); var pp = (location.search.match(/[?&]product=([^&#]+)/) || [])[1]; if (pp) { pp = decodeURIComponent(pp.replace(/\+/g, ' ')); var ps = $('#mProd'); Array.prototype.forEach.call(ps.options, function (o) { if (o.value === pp || o.text === pp) ps.value = o.value; }); }
 
   function all() { tsHome(); faqRender(); $$('.fld.bad,.fld.good').forEach(function (f) { check(f, f.classList.contains('good')); }); }
   D.addEventListener('cs:lang', all);

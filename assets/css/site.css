@@ -363,3 +363,7 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
 .thumbs button{position:absolute;top:4px;inset-inline-end:4px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(17,22,28,.8);color:#fff;cursor:pointer;font-size:14px}
 .note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:var(--liveBg);color:var(--text);font-size:14px}
+
+.loopvid{aspect-ratio:4/3;object-fit:cover;background:var(--panel2)}
+.mini-link{font-size:14px;font-weight:600;color:var(--goldText);text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+.thumbs .doc{display:flex;align-items:center;justify-content:center;padding:6px;font-size:11px;font-weight:700;text-align:center;word-break:break-all;width:100%;height:100%;background:var(--panel2);color:var(--text2)}

@@ -100,7 +100,7 @@
     sh.classList.add('open'); D.body.classList.add('locked');
     var cl = $('[data-close]', sh); if (cl) setTimeout(function () { cl.focus(); }, 50);
   }
-  function sheetClose() {
+  function sheetClose() { $$('video.loopvid').forEach(function (v) { v.pause(); });
     if (!openSheet) return; openSheet.el.classList.remove('open'); D.body.classList.remove('locked'); openSheet = null;
     if (lastFocus) lastFocus.focus();
   }
@@ -112,6 +112,18 @@
     var g = $('[data-anim="' + kind + '"]', svg); if (g) replay(g).classList.add('on');
   }
 
+  // real motion clip of the tool (assets/tool-loops/<CMD>.webm / .mp4) — shown only when the file exists, else the drawn animation stays
+  function loopVid(sh, cmd) {
+    var svg = $('.anim', sh); if (!svg) return;
+    var v = $('video.loopvid', sh);
+    if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
+    v.pause(); v.hidden = true; svg.hidden = false; v.innerHTML = ''; v.removeAttribute('poster'); v.oncanplay = null;
+    if (!cmd) return;
+    var base = (C.LOOPS || 'assets/tool-loops/') + cmd;
+    ['webm', 'mp4'].forEach(function (x) { var so = D.createElement('source'); so.src = base + '.' + x; so.type = 'video/' + x; v.appendChild(so); });
+    v.oncanplay = function () { v.oncanplay = null; svg.hidden = true; v.hidden = false; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    v.load();
+  }
   // tools / app tools
   var tsh = $('#toolSheet');
   $$('[data-tool]').forEach(function (btn) {
@@ -136,7 +148,7 @@
         if (vs) vs.hidden = !!d.video;
         var gd = $('[data-s="guide"]', tsh); if (gd && d.cmd) gd.href = (C.GUIDE || 'guide/') + d.cmd.toLowerCase() + '.html';
         var tn = $('[data-s="training"]', tsh); if (tn) { tn.hidden = !d.train; if (d.train) tn.href = (C.TRAINING || 'training/') + d.train + '.zip'; }
-        showAnim(tsh, d.kind);
+        showAnim(tsh, d.kind); loopVid(tsh, d.cmd);
       });
     });
   });
