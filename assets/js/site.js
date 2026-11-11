@@ -23,7 +23,8 @@
 
   /* ---------- language ---------- */
   var lang = store('cs_lang');
-  if (!I[lang]) { var n = (navigator.language || '').toLowerCase(); lang = n.indexOf('ar') === 0 ? (n.indexOf('iq') > -1 ? 'iq' : 'ar') : 'en'; }
+  if (lang === 'iq') { lang = 'ar'; store('cs_lang', 'ar'); }   /* 11-11: Iraqi dialect removed — Arabic + English only */
+  if (!I[lang]) { var n = (navigator.language || '').toLowerCase(); lang = n.indexOf('ar') === 0 ? 'ar' : 'en'; }
   function tr(k) { return (I[lang] && I[lang][k] != null) ? I[lang][k] : (I.ar && I.ar[k] != null ? I.ar[k] : ''); }
   function setLang(l, save) {
     lang = I[l] ? l : 'ar';
@@ -53,6 +54,8 @@
   /* ---------- restartable svg animation ---------- */
   function replay(el) { var c = el.cloneNode(true); el.parentNode.replaceChild(c, el); return c; }
 
+  /* ---------- page background: one of 3 themed variants per visit ---------- */
+  (function () { var bv = $$('[data-bgv]'); if (bv.length > 1) { var k = Math.floor(Math.random() * bv.length); bv.forEach(function (r, i) { r.style.display = i === k ? '' : 'none'; }); } })();
   /* ---------- cover scenes (random per visit, never the same twice in a row) ---------- */
   var scenes = $$('[data-scene]');
   if (scenes.length) {
@@ -215,4 +218,31 @@
   window.CS_TR = function (k) { return tr(k); }; window.CS_LANG = function () { return lang; }; window.CS_TRACK = track;
   setTheme(th, false);
   setLang(lang, false);
+
+  /* 11-11 · auto theme follows the phone until the visitor picks one */
+  try { var mq = matchMedia('(prefers-color-scheme: light)'); var onMq = function () { var sv = store('cs_theme'); if (sv !== 'dark' && sv !== 'light') setTheme(mq.matches ? 'light' : 'dark'); }; mq.addEventListener ? mq.addEventListener('change', onMq) : mq.addListener(onMq); } catch (e) {}
+  /* news strip (closed once = hidden until the next news id) */
+  $$('[data-news]').forEach(function (n) { var id = n.getAttribute('data-news'); if (store('cs_news') === id) return; n.hidden = false; var x = $('[data-news-x]', n); if (x) x.addEventListener('click', function () { n.hidden = true; store('cs_news', id); }); });
+  /* soft reveal on scroll — once, staggered, only for things below the first screen */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; } catch (e) {}
+    var els = $$('main > section, .grid > .card, .grid > button.card').filter(function (el) { return el.getBoundingClientRect().top > innerHeight * 0.9; });
+    if (!els.length) return;
+    root.classList.add('js-rv');
+    els.forEach(function (el) { el.classList.add('rv'); var sib = el.parentElement && el.parentElement.classList.contains('grid') ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0; el.style.transitionDelay = Math.min(sib % 4, 3) * 70 + 'ms'; });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+  /* real-work clips: load + play only while on screen (fast on weak mobile data) */
+  (function () {
+    var vids = $$('video.rvid'); if (!vids.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { var v = en.target, c = v.closest('.rcard');
+      if (en.isIntersecting) { if (!v.getAttribute('data-ld')) { var b = v.getAttribute('data-src'); v.innerHTML = '<source src="' + b + '.webm" type="video/webm"><source src="' + b + '.mp4" type="video/mp4">'; v.setAttribute('data-ld', '1'); v.load(); }
+        var pr = v.play(); if (pr && pr.then) pr.then(function () { c && c.classList.add('playing'); }, function () {}); }
+      else { v.pause(); c && c.classList.remove('playing'); } }); }, { threshold: 0.4 });
+    vids.forEach(function (v) { io.observe(v); });
+  })();
+  /* open a tool straight from a link: tools.html#t-CLEAD */
+  (function () { var m = /^#t-([A-Z0-9]+)$/.exec(location.hash || ''); if (!m) return; var b = $('[data-tool="' + m[1] + '"]'); if (b) setTimeout(function () { b.scrollIntoView({ block: 'center' }); b.click(); }, 350); })();
 })();

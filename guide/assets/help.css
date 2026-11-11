@@ -240,3 +240,6 @@ ul.sbl li::before{content:"";position:absolute;inset-inline-start:2px;top:.66em;
 @media (max-width:760px){.sbc,.wug{grid-template-columns:1fr}.sbbig b{font-size:16px}}
 @media print{.cp{display:none}.sbc .pic,.mw,.pt,.sbn,.sbbig,.ms{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{.sbc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.wug{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}.sbt p{font-size:13.5px;line-height:1.65}.sbc .pic{min-height:0;padding:12px}}
+
+/* 11-11: Iraqi dialect removed from the website — فصحى + English only */
+.lang span[data-v="ar"]{display:none}

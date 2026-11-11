@@ -4,9 +4,9 @@
   var KEY = "cadsurvey-help-lang";
   function getLang() {
     var q = (location.hash || "").replace("#", "");
-    if (q === "en" || q === "ar" || q === "msa") return q;
-    try { var v = localStorage.getItem(KEY); if (v === "en" || v === "ar" || v === "msa") return v; } catch (e) { }
-    return "ar";
+    if (q === "ar") q = "msa"; if (q === "en" || q === "msa") return q;
+    try { var v = localStorage.getItem(KEY); if (v === "ar") v = "msa"; if (v === "en" || v === "msa") return v; } catch (e) { }
+    return "msa";
   }
   function setLang(l) {
     document.documentElement.setAttribute("data-l", l);
