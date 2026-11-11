@@ -432,3 +432,12 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 .pv ul{margin:0;padding-inline-start:20px}
 .pv .lead{background:var(--liveBg);border-radius:14px;padding:12px 14px;color:var(--text);margin-top:10px}
 html[dir="ltr"] .pv[data-pv="ar"],html[dir="rtl"] .pv[data-pv="en"]{display:none}
+/* 11-11 Sitey shots · CS privacy */
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.shot{flex:none;width:min(62vw,230px);margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.shot img{width:100%;height:auto;border-radius:22px;border:3px solid var(--line);box-shadow:var(--shadow);background:#11161C;display:block}
+.shot figcaption{font-size:14px;color:var(--text2);text-align:center}
+html[dir="ltr"] .pv.cspv{display:block}
+.cspv h2{border-bottom:2px solid var(--gold);padding-bottom:6px}
+.cspv .box{background:var(--goldBg);border-radius:14px;padding:12px 14px;color:var(--text);margin:12px 0}
+.cspv a{color:var(--goldText)}
