@@ -1,0 +1,98 @@
+{
+ "CLEAD": {
+  "name": "Quick Coord",
+  "webm": "CLEAD.webm",
+  "mp4": "CLEAD.mp4",
+  "poster": "CLEAD.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 7.0,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "CPOINTS": {
+  "name": "Import Points",
+  "webm": "CPOINTS.webm",
+  "mp4": "CPOINTS.mp4",
+  "poster": "CPOINTS.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 7.0,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "CGRID": {
+  "name": "Coord Grid",
+  "webm": "CGRID.webm",
+  "mp4": "CGRID.mp4",
+  "poster": "CGRID.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 6.83,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "OINFO": {
+  "name": "Object Info",
+  "webm": "OINFO.webm",
+  "mp4": "OINFO.mp4",
+  "poster": "OINFO.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 5.92,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "ANUM": {
+  "name": "Auto Number",
+  "webm": "ANUM.webm",
+  "mp4": "ANUM.mp4",
+  "poster": "ANUM.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 7.0,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "CAREA": {
+  "name": "Area Calc",
+  "webm": "CAREA.webm",
+  "mp4": "CAREA.mp4",
+  "poster": "CAREA.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 6.83,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "CLEN": {
+  "name": "Length Calc",
+  "webm": "CLEN.webm",
+  "mp4": "CLEN.mp4",
+  "poster": "CLEN.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 6.83,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ },
+ "PTX": {
+  "name": "Point Table",
+  "webm": "PTX.webm",
+  "mp4": "PTX.mp4",
+  "poster": "PTX.jpg",
+  "width": 960,
+  "height": 540,
+  "duration": 7.0,
+  "loop": true,
+  "audio": false,
+  "source": "real AutoCAD interface (from the YouTube tutorial)"
+ }
+}

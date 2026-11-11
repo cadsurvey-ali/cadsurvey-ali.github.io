@@ -107,14 +107,14 @@
   $$('.sheet [data-close]').forEach(function (b) { b.addEventListener('click', sheetClose); });
   D.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openSheet) sheetClose(); });
   function showAnim(sh, kind) {
-    var svg = $('.anim', sh); if (!svg) return;
+    var svg = $('svg.anim', sh); if (!svg) return;
     $$('[data-anim]', svg).forEach(function (g) { g.classList.remove('on'); });
     var g = $('[data-anim="' + kind + '"]', svg); if (g) replay(g).classList.add('on');
   }
 
   // real motion clip of the tool (assets/tool-loops/<CMD>.webm / .mp4) — shown only when the file exists, else the drawn animation stays
   function loopVid(sh, cmd) {
-    var svg = $('.anim', sh); if (!svg) return;
+    var svg = $('svg.anim', sh); if (!svg) return;
     var v = $('video.loopvid', sh);
     if (!v) { v = D.createElement('video'); v.className = 'anim loopvid'; v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true'); svg.parentNode.insertBefore(v, svg); }
     v.pause(); v.hidden = true; svg.hidden = false; v.innerHTML = ''; v.removeAttribute('poster'); v.oncanplay = null;
