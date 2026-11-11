@@ -400,3 +400,4 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 @media(prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none}}
 .news-w[hidden]{display:none}
 .news-tx{white-space:normal;line-height:1.35}
+@media print{.js-rv .rv{opacity:1!important;transform:none!important}}

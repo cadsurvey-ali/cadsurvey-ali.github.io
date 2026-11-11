@@ -233,6 +233,9 @@
     els.forEach(function (el) { el.classList.add('rv'); var sib = el.parentElement && el.parentElement.classList.contains('grid') ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0; el.style.transitionDelay = Math.min(sib % 4, 3) * 70 + 'ms'; });
     var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
     els.forEach(function (el) { io.observe(el); });
+    /* safety: never leave content hidden (full-page screenshots, print/PDF, odd browsers) */
+    function showAll() { els.forEach(function (el) { el.classList.add('in'); }); try { io.disconnect(); } catch (e) {} }
+    setTimeout(showAll, 2500); window.addEventListener('beforeprint', showAll);
   })();
   /* real-work clips: load + play only while on screen (fast on weak mobile data) */
   (function () {
