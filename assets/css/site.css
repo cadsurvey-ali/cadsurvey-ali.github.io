@@ -441,3 +441,8 @@ html[dir="ltr"] .pv.cspv{display:block}
 .cspv h2{border-bottom:2px solid var(--gold);padding-bottom:6px}
 .cspv .box{background:var(--goldBg);border-radius:14px;padding:12px 14px;color:var(--text);margin:12px 0}
 .cspv a{color:var(--goldText)}
+/* 11-16 promo cards (tools) */
+.pcards .pcard{flex:none;width:min(84vw,520px);scroll-snap-align:start;border:0;padding:0;background:none;cursor:pointer;display:flex;flex-direction:column;gap:8px;text-align:start;color:var(--text);font:inherit}
+.pcard img{width:100%;height:auto;border-radius:18px;border:2px solid var(--line);box-shadow:var(--shadow);display:block;transition:transform .25s,border-color .25s}
+.pcard:hover img,.pcard:focus-visible img{transform:translateY(-3px);border-color:var(--gold)}
+.pcap{font-size:15px;color:var(--text2);padding:0 4px}

@@ -1,7 +1,7 @@
 /* CAD & SURVEY website settings — edit here, nothing else needs changing. */
 window.CS_CONFIG = {
   GA_ID: 'G-TELXQFW7WB',              // Google Analytics 4 id, e.g. 'G-XXXXXXX' — visitors, countries, devices, button clicks
-  DOWNLOAD_URL: 'https://github.com/cadsurvey-ali/cadsurvey-public/releases/download/v2.5.0/CadSurveyTools_2.5.0_Setup.exe',       // direct download of CAD & SURVEY Tools (GitHub release link); empty = button asks by e-mail
+  DOWNLOAD_URL: 'https://github.com/cadsurvey-ali/cadsurvey-public/releases/download/v2.5.2/CadSurveyTools_2.5.2_Setup.exe',       // direct download of CAD & SURVEY Tools (GitHub release link); empty = button asks by e-mail
   PRICE_ENDPOINT: 'https://script.google.com/macros/s/AKfycbxbyQv6achIMIbP-HxkbJuMMj1sXk8jhDQ99qXRUptkxHh6olh3Zmbv6vihDuGKpYtg/exec',     // form service that sends the price card automatically; empty = opens a ready e-mail
   EMAIL: 'eng.alicadsurvey@gmail.com',
   PLAYLIST: 'https://www.youtube.com/playlist?list=PLG_EUgyWk9Eo',

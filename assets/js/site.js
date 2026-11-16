@@ -248,4 +248,7 @@
   })();
   /* open a tool straight from a link: tools.html#t-CLEAD */
   (function () { var m = /^#t-([A-Z0-9]+)$/.exec(location.hash || ''); if (!m) return; var b = $('[data-tool="' + m[1] + '"]'); if (b) setTimeout(function () { b.scrollIntoView({ block: 'center' }); b.click(); }, 350); })();
+
+  /* promo cards → open that tool's window */
+  $$('[data-tool-link]').forEach(function (c) { c.addEventListener('click', function () { var b = $('[data-tool="' + c.getAttribute('data-tool-link') + '"]'); if (b) b.click(); }); });
 })();
